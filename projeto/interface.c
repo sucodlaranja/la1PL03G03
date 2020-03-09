@@ -8,16 +8,21 @@ void mostrar_tabuleiro(ESTADO estado) {
     char tabuleiro[8][8];
     for (i = 0; i < 8; i++) {
         for (k = 0; k < 8; k++) {
+            //faz quando comeca o pograma
+
             if (count=0) {if (i == 0 && k == 7) tabuleiro[k][i] = '2';
                 else if (i == 7 && k == 0) tabuleiro[k][i] = '1';
                 else if (i == 3 && k == 4) tabuleiro[k][i] = "*";
-                else tabuleiro[k][i] = "."} else {
+                else tabuleiro[k][i] = ".";}
+            //faz a partir da primeira jogada
+            else {
                 if (i == 0 && k == 7) tabuleiro[k][i] = '2';
                 else if (i == 7 && k == 0) tabuleiro[k][i] = '1';
                 else if (estado.tab[k][i] =BRANCA) tabuleiro[k][i] = "*";
                 else if (estado.tab[k][i] = PRETA)  tabuleiro[k][i] = "#";
-                else  (estado.tab[k][i]=VAZIO)  tabuleiro[k][i] = ".";}
-        }
+                else  tabuleiro[k][i] = ".";
+            }
+        } }
         count++;
         for (i = 0; i < 8; i++) {
             for (k = 0; k < 8; k++) {
@@ -26,7 +31,6 @@ void mostrar_tabuleiro(ESTADO estado) {
             printf("\n");
         }
     }
-}
 
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
@@ -36,6 +40,10 @@ int interpretador(ESTADO *e) {
     if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
         COORDENADA coord = {*col - 'a', *lin - '1'};
         jogar(e, coord);
-        mostrar_tabuleiro(e);
+        mostrar_tabuleiro(*e);
+    } }
+int main() {
+        ESTADO *x=inicializar_estado();
+        interpretador(x);
+    return 0;
     }
-    r

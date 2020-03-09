@@ -1,3 +1,5 @@
+
+#ifndef PROJETO_CAMADA_DADOS_H
 #define BUF_SIZE 1024
 typedef enum {VAZIO, BRANCA, PRETA} CASA;
 typedef struct {
@@ -17,7 +19,7 @@ typedef struct {
     int jogador_atual;
 } ESTADO;
 
-#ifndef PROJETO_CAMADA_DADOS_H
+
 ESTADO *inicializar_estado();
 #define PROJETO_CAMADA_DADOS_H
 
