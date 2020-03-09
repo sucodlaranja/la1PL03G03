@@ -1,7 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "logica_pograma.h"
 ESTADO *inicializar_estado() {
-    ESTADO *estado = NULL;
+    ESTADO *estado = (ESTADO *) malloc(sizeof(ESTADO));
     //CASA
     int k,i;
     for (i = 0; i < 8; i++) {
