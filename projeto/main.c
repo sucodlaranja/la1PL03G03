@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include "camada_dados.h"
 #include "logica_pograma.h"
+#include "interface.h"
+
 int main() {
-    ESTADO estado;
-    estado=inicializar_estado();
-    mostrar_tabuleiro(estado);
+    ESTADO *e = inicializar_estado();
+    mostrar_tabuleiro(*e);
+    interpretador(e);
     return 0;
 }

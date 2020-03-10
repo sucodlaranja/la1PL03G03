@@ -6,5 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/joao/CLionProjects/projeto/jogadas.c
+/home/joao/CLionProjects/projeto/camada_dados.h
+
+/home/joao/CLionProjects/projeto/interface.c
+camada_dados.h
+/home/joao/CLionProjects/projeto/camada_dados.h
+logica_pograma.h
+/home/joao/CLionProjects/projeto/logica_pograma.h
+stdio.h
+-
+string.h
+-
+
+/home/joao/CLionProjects/projeto/logica_pograma.h
+camada_dados.h
+/home/joao/CLionProjects/projeto/camada_dados.h
 
