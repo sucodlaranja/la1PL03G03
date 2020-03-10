@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/miguel/CLionProjects/Jogo/camada_dados.h
+
+/home/miguel/CLionProjects/Jogo/logica_programa.h
+camada_dados.h
+/home/miguel/CLionProjects/Jogo/camada_dados.h
+
+/home/miguel/CLionProjects/Jogo/main.c
+stdio.h
+-
+camada_dados.h
+/home/miguel/CLionProjects/Jogo/camada_dados.h
+logica_programa.h
+/home/miguel/CLionProjects/Jogo/logica_programa.h
+
