@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/joao/CLionProjects/projeto/camada_dados.c" "/home/joao/CLionProjects/projeto/cmake-build-debug/CMakeFiles/projeto.dir/camada_dados.c.o"
-  "/home/joao/CLionProjects/projeto/interface.c" "/home/joao/CLionProjects/projeto/cmake-build-debug/CMakeFiles/projeto.dir/interface.c.o"
-  "/home/joao/CLionProjects/projeto/logica_pograma.c" "/home/joao/CLionProjects/projeto/cmake-build-debug/CMakeFiles/projeto.dir/logica_pograma.c.o"
-  "/home/joao/CLionProjects/projeto/main.c" "/home/joao/CLionProjects/projeto/cmake-build-debug/CMakeFiles/projeto.dir/main.c.o"
+  "/home/joaoandre/Desktop/projeto-la-master/projeto/camada_dados.c" "/home/joaoandre/Desktop/projeto-la-master/projeto/cmake-build-debug/CMakeFiles/projeto.dir/camada_dados.c.o"
+  "/home/joaoandre/Desktop/projeto-la-master/projeto/interface.c" "/home/joaoandre/Desktop/projeto-la-master/projeto/cmake-build-debug/CMakeFiles/projeto.dir/interface.c.o"
+  "/home/joaoandre/Desktop/projeto-la-master/projeto/logica_pograma.c" "/home/joaoandre/Desktop/projeto-la-master/projeto/cmake-build-debug/CMakeFiles/projeto.dir/logica_pograma.c.o"
+  "/home/joaoandre/Desktop/projeto-la-master/projeto/main.c" "/home/joaoandre/Desktop/projeto-la-master/projeto/cmake-build-debug/CMakeFiles/projeto.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

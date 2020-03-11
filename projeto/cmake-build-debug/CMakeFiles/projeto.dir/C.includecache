@@ -6,19 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/joao/CLionProjects/projeto/camada_dados.h
-
-/home/joao/CLionProjects/projeto/interface.c
-camada_dados.h
-/home/joao/CLionProjects/projeto/camada_dados.h
-logica_pograma.h
-/home/joao/CLionProjects/projeto/logica_pograma.h
+/home/joaoandre/Desktop/projeto-la-master/projeto/camada_dados.c
 stdio.h
 -
-string.h
+stdlib.h
 -
+logica_pograma.h
+/home/joaoandre/Desktop/projeto-la-master/projeto/logica_pograma.h
 
-/home/joao/CLionProjects/projeto/logica_pograma.h
+/home/joaoandre/Desktop/projeto-la-master/projeto/camada_dados.h
+
+/home/joaoandre/Desktop/projeto-la-master/projeto/logica_pograma.h
 camada_dados.h
-/home/joao/CLionProjects/projeto/camada_dados.h
+/home/joaoandre/Desktop/projeto-la-master/projeto/camada_dados.h
 
