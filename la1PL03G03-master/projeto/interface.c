@@ -36,7 +36,7 @@ int interpretador(ESTADO *e) {
         scanf("%s", f);
         if (strcmp(f, "sim") == 0) {
             printf("%d PL%d %c%c\n", e->num_jogadas, obter_jogador_atual(e), e->ultima_jogada.coluna + 'a',
-                   e->ultima_jogada.linha + '2');
+                   e->ultima_jogada.linha + '1');
             mostrar_tabuleiro(*e);
         }
         if (fgets(linha, BUF_SIZE, stdin) == NULL) return 0;
@@ -47,6 +47,18 @@ int interpretador(ESTADO *e) {
     }
 
 
+    if(coord.linha == 7 && coord.coluna == 0 && obter_jogador_atual(e) == 2) {
+        printf("Parabens!, Jogador 2 ganhou o jogo");
+        return 0;
+
+    }
+    else if (coord.linha == 0 && coord.coluna == 7 && obter_jogador_atual(e) == 1)
+        {
+        printf("Parabens!, Jogador 1 ganhou o jogo");
+        return 0;
+        }
+    else{
+
             //transforma a jogada anterior em branca e dps torna a jogada atual na ultima jogada pra ser comparada outra vez mais tarde
         e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = PRETA;
                     e->ultima_jogada.coluna=coord.coluna;
@@ -56,6 +68,8 @@ int interpretador(ESTADO *e) {
 
 
                     e->num_jogadas++;
-        printf("é a jogar o jogador %d\n",obter_jogador_atual(e));
+
         mostrar_tabuleiro(*e);
-    }
+        printf("é a jogar o jogador %d\n",obter_jogador_atual(e));
+        }
+}

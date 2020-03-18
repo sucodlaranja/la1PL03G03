@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/joao/Transferências/la1PL03G03-master/projeto/camada_dados.c
+stdlib.h
+-
+logica_pograma.h
+/home/joao/Transferências/la1PL03G03-master/projeto/logica_pograma.h
+
 /home/joao/Transferências/la1PL03G03-master/projeto/camada_dados.h
 
 /home/joao/Transferências/la1PL03G03-master/projeto/interface.c

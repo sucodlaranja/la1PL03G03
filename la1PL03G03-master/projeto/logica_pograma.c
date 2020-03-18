@@ -14,7 +14,7 @@ int jogar (ESTADO *e, COORDENADA c) {
         }
     }
     else {
-        printf("a jogada %c%d não e valida\n", c.coluna+ 'a', c.linha+1);
+        printf("a jogada %c%d não e valida\n", c.coluna + 'a', c.linha + 1);
         return 0;
     }
 }
