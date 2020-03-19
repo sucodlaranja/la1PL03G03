@@ -71,5 +71,19 @@ int interpretador(ESTADO *e) {
 
         mostrar_tabuleiro(*e);
         printf("é a jogar o jogador %d\n",obter_jogador_atual(e));
+
+
+        //operacoes de files
+        int coluna,linha;
+        char tabuleiro[8][8];
+        FILE *fout;
+       fout = fopen("tabuleiro.txt","w+");
+        for (linha = 0; linha < 8; linha++) {
+            for (coluna = 0; coluna < 8; coluna++) {
+                fprintf(fout,"%c",tabuleiro[coluna][linha]);
+            }
+            fprintf(fout,"\n");
+        }
+        fclose(fout);
         }
 }
