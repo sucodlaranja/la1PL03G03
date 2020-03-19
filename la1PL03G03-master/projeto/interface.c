@@ -75,12 +75,11 @@ int interpretador(ESTADO *e) {
 
         //operacoes de files
         int coluna,linha;
-        char tabuleiro[8][8];
         FILE *fout;
        fout = fopen("tabuleiro.txt","w+");
         for (linha = 0; linha < 8; linha++) {
             for (coluna = 0; coluna < 8; coluna++) {
-                fprintf(fout,"%c",tabuleiro[coluna][linha]);
+                e->tab[coluna][linha];
             }
             fprintf(fout,"\n");
         }
