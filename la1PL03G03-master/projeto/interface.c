@@ -26,24 +26,20 @@ void mostrar_tabuleiro(ESTADO estado) {
 
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
-    char f[BUF_SIZE];
     char col[2], lin[2];
     COORDENADA coord;
     int z = 0;
 
     while (z == 0) {
-        printf("quer ver os stats?\n");
-        scanf("%s", f);
-        if (strcmp(f, "sim") == 0) {
-            printf("%d PL%d %c%c\n", e->num_jogadas, obter_jogador_atual(e), e->ultima_jogada.coluna + 'a',
-                   e->ultima_jogada.linha + '1');
-            mostrar_tabuleiro(*e);
-        }
+        printf("%d PL%d %c%c\n", e->num_jogadas, obter_jogador_atual(e), e->ultima_jogada.coluna + 'a',
+               e->ultima_jogada.linha + '1');
         if (fgets(linha, BUF_SIZE, stdin) == NULL) return 0;
-        scanf("%[a-h]%[1-8]", &col, &lin);
-        coord.coluna = *col - 'a';
-        coord.linha = *lin - '1';
-        z = jogar(e, coord);
+
+        if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
+            coord.coluna = *col - 'a';
+            coord.linha = *lin - '1';
+            z = jogar(e, coord);
+        }
     }
 
 
@@ -70,9 +66,7 @@ int interpretador(ESTADO *e) {
                     e->num_jogadas++;
 
         mostrar_tabuleiro(*e);
-        printf("é a jogar o jogador %d\n",obter_jogador_atual(e));
-
-
+        
         //operacoes de files
         int coluna,linha;
         FILE *fout;
