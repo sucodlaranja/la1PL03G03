@@ -31,16 +31,42 @@ int interpretador(ESTADO *e) {
     int z = 0;
 
     while (z == 0) {
-        printf("%d PL%d %c%c\n", e->num_jogadas, obter_jogador_atual(e), e->ultima_jogada.coluna + 'a',
-               e->ultima_jogada.linha + '1');
+
         if (fgets(linha, BUF_SIZE, stdin) == NULL) return 0;
 
-        if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
+        else if (strcmp(linha,"Q") == 0) {
+            printf("jogo terminado\n");
+            return 0;
+        }
+        else if (strcmp(linha,"stats") == 0) {
+            printf("%d PL%d %c%c\n", e->num_jogadas, obter_jogador_atual(e), e->ultima_jogada.coluna + 'a',
+                   e->ultima_jogada.linha + '1');
+        }
+        else if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
             coord.coluna = *col - 'a';
             coord.linha = *lin - '1';
             z = jogar(e, coord);
         }
+
+
+        else if (strcmp(linha, "gravar tabuleiro")) {
+            int coluna,linha;
+            FILE *fout;
+            fout = fopen("tabuleiro.txt","w+");
+            for (linha = 0; linha < 8; linha++) {
+                for (coluna = 0; coluna < 8; coluna++) {
+                    e->tab[coluna][linha];
+                }
+                fprintf(fout,"\n");
+            }
+            fclose(fout);
+        }
+        else if ((strcmp(linha, "ler tabuleiro"))) {
+            FILE *fout;
+            fout = fopen("tabuleiro.txt","r");
+        }
     }
+
 
 
     if(coord.linha == 7 && coord.coluna == 0 && obter_jogador_atual(e) == 2) {
@@ -48,11 +74,15 @@ int interpretador(ESTADO *e) {
         return 0;
 
     }
-    else if (coord.linha == 0 && coord.coluna == 7 && obter_jogador_atual(e) == 1)
-        {
+
+
+
+    else if (coord.linha == 0 && coord.coluna == 7 && obter_jogador_atual(e) == 1) {
         printf("Parabens!, Jogador 1 ganhou o jogo");
         return 0;
         }
+
+
     else{
 
             //transforma a jogada anterior em branca e dps torna a jogada atual na ultima jogada pra ser comparada outra vez mais tarde
@@ -66,17 +96,5 @@ int interpretador(ESTADO *e) {
                     e->num_jogadas++;
 
         mostrar_tabuleiro(*e);
-        
-        //operacoes de files
-        int coluna,linha;
-        FILE *fout;
-       fout = fopen("tabuleiro.txt","w+");
-        for (linha = 0; linha < 8; linha++) {
-            for (coluna = 0; coluna < 8; coluna++) {
-                e->tab[coluna][linha];
-            }
-            fprintf(fout,"\n");
-        }
-        fclose(fout);
         }
 }
