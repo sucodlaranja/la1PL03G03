@@ -31,14 +31,12 @@ int interpretador(ESTADO *e) {
     int z = 0;
 
     while (z == 0) {
-
         if (fgets(linha, BUF_SIZE, stdin) == NULL) return 0;
-
         else if (strcmp(linha,"Q") == 0) {
             printf("jogo terminado\n");
             return 0;
         }
-        else if (strcmp(linha,"stats") == 0) {
+        else if (strcmp(linha, "stats") == 0) {
             printf("%d PL%d %c%c\n", e->num_jogadas, obter_jogador_atual(e), e->ultima_jogada.coluna + 'a',
                    e->ultima_jogada.linha + '1');
         }
@@ -49,19 +47,19 @@ int interpretador(ESTADO *e) {
         }
 
 
-        else if (strcmp(linha, "gravar tabuleiro")) {
+        else if (strcmp(linha, "gravar tabuleiro") == 0 ) {
             int coluna,linha;
             FILE *fout;
             fout = fopen("tabuleiro.txt","w+");
             for (linha = 0; linha < 8; linha++) {
                 for (coluna = 0; coluna < 8; coluna++) {
-                    e->tab[coluna][linha];
+                    fprintf(fout,"%s",e->tab[coluna][linha]);
                 }
                 fprintf(fout,"\n");
             }
             fclose(fout);
         }
-        else if ((strcmp(linha, "ler tabuleiro"))) {
+        else if ((strcmp(linha, "ler tabuleiro")) == 0) {
             FILE *fout;
             fout = fopen("tabuleiro.txt","r");
         }
