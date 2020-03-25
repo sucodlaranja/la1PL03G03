@@ -25,27 +25,65 @@ void mostrar_tabuleiro(ESTADO estado) {
 
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
+
     char col[2], lin[2];
-    COORDENADA coord = {*col - 'a', *lin - '1'};
-    int z=0;
-    while(z==0) {
-    if(fgets(linha, BUF_SIZE, stdin) == NULL) return 0;
-    if(strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
-        COORDENADA coord = {*col - 'a', *lin - '1'};
-        z=jogar(e, coord);
 
-    }}
+    COORDENADA coord;
 
-            //transforma a jogada anterior em branca e dps torna a jogada atual na ultima jogada pra ser comparada outra vez mais tarde
-        e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = PRETA;
-                    e->ultima_jogada.coluna=coord.coluna;
-        e->ultima_jogada.linha=coord.linha;
-                    //transforma a jogada atual em asterisco
-                    e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = BRANCA;
+    int z = 0;
+
+    while (z == 0) {
+        if(fgets(linha, BUF_SIZE, stdin) == NULL);
+
+       else if (strcmp(linha,"Q\n") == 0) {
+            printf("jogo terminado\n");
+            return 0;
+        }
+        else if (strcmp(linha, "stats\n") == 0) {
+            printf("%d PL%d %c%c\n", e->num_jogadas, obter_jogador_atual(e), e->ultima_jogada.coluna + 'a',
+                   e->ultima_jogada.linha + '1');
+        }
+        else if (strlen(linha) == 3 && sscanf(linha,"%[a-h]%[1-8]",col,lin) == 2) {
+            coord.coluna = *col - 'a';
+            coord.linha = *lin - '1';
+            z = jogar(e, coord);
+        }
 
 
-                    e->num_jogadas++;
 
-        printf("é a jogar o jogador %d",obter_jogador_atual(e));
-        mostrar_tabuleiro(*e);
+        //files
+        else if (strcmp(linha, "gravar tabuleiro") == 0 ) {
+            gravador_tabuleiro(e);
+        }
+        else if ((strcmp(linha, "ler tabuleiro")) == 0) {
+            FILE *fout;
+            fout = fopen("tabuleiro.txt","r");
+        }
     }
+
+
+
+    if(coord.linha == 7 && coord.coluna == 0 && obter_jogador_atual(e) == 2) {
+        printf("Parabens!, Jogador 2 ganhou o jogo");
+        return 0;
+
+    }
+
+
+
+    else if (coord.linha == 0 && coord.coluna == 7 && obter_jogador_atual(e) == 1) {
+        printf("Parabens!, Jogador 1 ganhou o jogo");
+        return 0;
+        }
+
+
+    else {
+
+        atualizador(e,coord);
+
+        num_jogadas(e);
+
+        mostrar_tabuleiro(*e);
+        }
+    return 1;
+}

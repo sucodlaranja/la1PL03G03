@@ -6,6 +6,10 @@
 int main() {
     ESTADO *e = inicializar_estado();
     mostrar_tabuleiro(*e);
+    while(e->num_jogadas<32) {
     interpretador(e);
+    if (interpretador(e) == 0) break;
+
+                            }
     return 0;
 }
