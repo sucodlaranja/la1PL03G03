@@ -1,7 +1,6 @@
 #include "camada_dados.h"
 #include "logica_pograma.h"
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 void mostrar_tabuleiro(ESTADO estado) {
     int coluna,linha;
@@ -26,38 +25,35 @@ void mostrar_tabuleiro(ESTADO estado) {
 
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
+
     char col[2], lin[2];
+
     COORDENADA coord;
+
     int z = 0;
 
     while (z == 0) {
-        if (fgets(linha, BUF_SIZE, stdin) == NULL) return 0;
-        else if (strcmp(linha,"Q") == 0) {
+        if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0;
+
+       else if (strcmp(linha,"Q\n") == 0) {
             printf("jogo terminado\n");
             return 0;
         }
-        else if (strcmp(linha, "stats") == 0) {
+        else if (strcmp(linha, "stats\n") == 0) {
             printf("%d PL%d %c%c\n", e->num_jogadas, obter_jogador_atual(e), e->ultima_jogada.coluna + 'a',
                    e->ultima_jogada.linha + '1');
         }
-        else if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
+        else if (strlen(linha) == 3 && sscanf(linha,"%[a-h]%[1-8]",col,lin) == 2) {
             coord.coluna = *col - 'a';
             coord.linha = *lin - '1';
             z = jogar(e, coord);
         }
 
 
+
+        //files
         else if (strcmp(linha, "gravar tabuleiro") == 0 ) {
-            int coluna,linha;
-            FILE *fout;
-            fout = fopen("tabuleiro.txt","w+");
-            for (linha = 0; linha < 8; linha++) {
-                for (coluna = 0; coluna < 8; coluna++) {
-                    fprintf(fout,"%s",e->tab[coluna][linha]);
-                }
-                fprintf(fout,"\n");
-            }
-            fclose(fout);
+            gravador_tabuleiro(e);
         }
         else if ((strcmp(linha, "ler tabuleiro")) == 0) {
             FILE *fout;
@@ -81,18 +77,13 @@ int interpretador(ESTADO *e) {
         }
 
 
-    else{
+    else {
 
-            //transforma a jogada anterior em branca e dps torna a jogada atual na ultima jogada pra ser comparada outra vez mais tarde
-        e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = PRETA;
-                    e->ultima_jogada.coluna=coord.coluna;
-        e->ultima_jogada.linha=coord.linha;
-                    //transforma a jogada atual em asterisco
-                    e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = BRANCA;
+        atualizador(e,coord);
 
-
-                    e->num_jogadas++;
+        num_jogadas(e);
 
         mostrar_tabuleiro(*e);
         }
+    return 1;
 }

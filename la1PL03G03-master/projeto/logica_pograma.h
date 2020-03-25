@@ -7,6 +7,9 @@
 #ifndef PROJETO_LOGICA_POGRAMA_H
 void mostrar_tabuleiro(ESTADO estado);
 int jogar(ESTADO *e, COORDENADA c);
+int num_jogadas(ESTADO *e);
+void atualizador(ESTADO *e,COORDENADA coord);
+void gravador_tabuleiro(ESTADO *e);
 #define PROJETO_LOGICA_POGRAMA_H
 
 #endif //PROJETO_LOGICA_POGRAMA_H
