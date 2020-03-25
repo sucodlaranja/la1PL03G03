@@ -33,7 +33,7 @@ int interpretador(ESTADO *e) {
     int z = 0;
 
     while (z == 0) {
-        if(fgets(linha, BUF_SIZE, stdin) == NULL);
+        if(fgets(linha, BUF_SIZE, stdin) == NULL)return 0;
 
        else if (strcmp(linha,"Q\n") == 0) {
             printf("jogo terminado\n");
