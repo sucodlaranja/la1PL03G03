@@ -1,1 +1,0 @@
-/usr/bin/cc -g   CMakeFiles/Jogo.dir/main.c.o CMakeFiles/Jogo.dir/camada_dados.c.o CMakeFiles/Jogo.dir/interface.c.o CMakeFiles/Jogo.dir/logica_programa.c.o  -o Jogo 
