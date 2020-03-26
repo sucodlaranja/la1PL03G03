@@ -10,6 +10,7 @@ int jogar (ESTADO *e, COORDENADA c) {
             return 1;
         }
         else {
+            printf("a jogada %c%d não e valida\n", c.coluna + 'a', c.linha + 1);
             return 0;
         }
     }
@@ -40,15 +41,30 @@ void atualizador(ESTADO *e,COORDENADA coord) {
 }
 
 
-void gravador_tabuleiro(ESTADO *e) {
-    int coluna,linha;
+void gravador(ESTADO *e) {
     FILE *fout;
-    fout = fopen("tabuleiro.txt","w+");
+    int coluna,linha;
+    char tabuleiro[8][8];
+    fout = fopen("jogo.txt","w+");
+
+    //tabuleiro
     for (linha = 0; linha < 8; linha++) {
         for (coluna = 0; coluna < 8; coluna++) {
-            fprintf(fout,"%s",e->tab[coluna][linha]);
+            if (linha == 0 && coluna == 7) tabuleiro[coluna][linha] = '2';
+            else if (linha == 7 && coluna == 0) tabuleiro[coluna][linha] = '1';
+            else if (e->tab[coluna][linha] == BRANCA) tabuleiro[coluna][linha] = '*';
+            else if (e->tab[coluna][linha] == PRETA) tabuleiro[coluna][linha] = '#';
+            else tabuleiro[coluna][linha] = '.';
         }
-        fprintf(fout,"\n");
+    }
+
+    for (linha = 0; linha < 8; linha++) {
+
+        for (coluna = 0; coluna < 8; coluna++) {
+            printf("%c",tabuleiro[coluna][linha]);
+        }
+        printf("\n");
     }
     fclose(fout);
 }
+
