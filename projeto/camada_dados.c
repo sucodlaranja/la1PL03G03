@@ -23,8 +23,8 @@ ESTADO *inicializar_estado() {
 
 
 
-int obter_jogador_atual(ESTADO *estado) {
-    if (estado->num_jogadas%2==0) return 1;
+int obter_jogador_atual(int e) {
+    if (e%2==0) return 1;
     else return 2;
 }
 

@@ -6,19 +6,23 @@
 
 #IncludeRegexTransform: 
 
-/home/joao/Transferências/la1PL03G03-master/la1PL03G03-master/projeto/camada_dados.h
+/home/joao/Transferências/la1PL03G03-master/projeto/camada_dados.h
 
-/home/joao/Transferências/la1PL03G03-master/la1PL03G03-master/projeto/interface.c
+/home/joao/Transferências/la1PL03G03-master/projeto/interface.h
 camada_dados.h
-/home/joao/Transferências/la1PL03G03-master/la1PL03G03-master/projeto/camada_dados.h
-logica_pograma.h
-/home/joao/Transferências/la1PL03G03-master/la1PL03G03-master/projeto/logica_pograma.h
+/home/joao/Transferências/la1PL03G03-master/projeto/camada_dados.h
+
+/home/joao/Transferências/la1PL03G03-master/projeto/logica_pograma.c
+camada_dados.h
+/home/joao/Transferências/la1PL03G03-master/projeto/camada_dados.h
 stdio.h
 -
-string.h
--
+logica_pograma.h
+/home/joao/Transferências/la1PL03G03-master/projeto/logica_pograma.h
+interface.h
+/home/joao/Transferências/la1PL03G03-master/projeto/interface.h
 
-/home/joao/Transferências/la1PL03G03-master/la1PL03G03-master/projeto/logica_pograma.h
+/home/joao/Transferências/la1PL03G03-master/projeto/logica_pograma.h
 camada_dados.h
-/home/joao/Transferências/la1PL03G03-master/la1PL03G03-master/projeto/camada_dados.h
+/home/joao/Transferências/la1PL03G03-master/projeto/camada_dados.h
 

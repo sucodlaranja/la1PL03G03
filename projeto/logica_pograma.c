@@ -1,6 +1,7 @@
 #include "camada_dados.h"
 #include <stdio.h>
 #include "logica_pograma.h"
+#include "interface.h""
 
 //valida a jogada
 int jogar (ESTADO *e, COORDENADA c) {
@@ -64,6 +65,9 @@ void gravador(ESTADO *e) {
             printf("%c",tabuleiro[coluna][linha]);
         }
         printf("\n");
+    }
+    for(int k=0;k<e->num_jogadas;k++) {
+        printf("%d: %c%c %c%c\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
     }
     fclose(fout);
 }

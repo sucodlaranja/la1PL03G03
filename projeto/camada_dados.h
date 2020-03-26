@@ -19,7 +19,7 @@ typedef struct {
     int jogador_atual;
 } ESTADO;
 
-int obter_jogador_atual(ESTADO *estado);
+int obter_jogador_atual(int e);
 ESTADO *inicializar_estado();
 #define PROJETO_CAMADA_DADOS_H
 
