@@ -59,7 +59,7 @@ static int count=0;
                 printf("a jogada não e valida\n");
                 z = 0;
             }
-                else if (coord.linha == 0 && coord.coluna == 7 && obter_jogador_atual(count) == 2) {
+                else if (coord.linha == 7 && coord.coluna == 0 && obter_jogador_atual(count) == 2) {
                     printf("a jogada não e valida\n");
                     z=0;
                 }
@@ -82,7 +82,6 @@ static int count=0;
         //files
         else if (strcmp(linha, "gravar pos\n") == 0 ) {
             gravador(e);
-
              }
         else if ((strcmp(linha, "ler\n")) == 0) {
             FILE *fout;
