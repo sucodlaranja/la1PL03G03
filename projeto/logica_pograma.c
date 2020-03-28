@@ -1,7 +1,7 @@
 #include "camada_dados.h"
 #include <stdio.h>
 #include "logica_pograma.h"
-#include "interface.h""
+#include "interface.h"
 
 //valida a jogada
 int jogar (ESTADO *e, COORDENADA c) {
@@ -46,7 +46,7 @@ void gravador(ESTADO *e) {
     FILE *fout;
     int coluna,linha;
     char tabuleiro[8][8];
-    fout = fopen("pos.txt","w+");
+    fout = fopen("pos.txt","w");
 
     //tabuleiro
     for (linha = 0; linha < 8; linha++) {
