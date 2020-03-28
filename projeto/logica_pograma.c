@@ -66,9 +66,16 @@ void gravador(ESTADO *e) {
         }
         printf("\n");
     }
+
+    //linha de separacao
     printf("\n");
+
+    //jogadas
     for(int k=0;k<e->num_jogadas;k++) {
         printf("%d: %c%c %c%c\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
+    }
+    if(e->jogadas[e->num_jogadas].jogador1.linha !=0 && e->jogadas[e->num_jogadas].jogador1.coluna !=0) {
+        printf("%d: %c%c\n",e->num_jogadas+1, e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
     }
 
     fclose(fout);
