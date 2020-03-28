@@ -31,50 +31,84 @@ int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
 static int count=0;
     char col[2], lin[2];
-
+int num;
     COORDENADA coord;
 
     int z = 0;
 
     while (z == 0) {
-        if(fgets(linha, BUF_SIZE, stdin) == NULL) return 0;
-
-        else if (strcmp(linha,"Q\n") == 0) {
+        fgets(linha, BUF_SIZE, stdin);
+        if (strcmp(linha, "Q\n") == 0) {
             printf("jogo terminado\n");
             exit(-1);
-            }
+        }
 
-        //prompt
+            //prompt
         else if (strcmp(linha, "stats\n") == 0) {
-            printf("%d PL%d %c%c\n", (e->num_jogadas+1), obter_jogador_atual(count), e->ultima_jogada.coluna + 'a',
+            printf("%d PL%d %c%c\n", (e->num_jogadas + 1), obter_jogador_atual(count), e->ultima_jogada.coluna + 'a',
                    e->ultima_jogada.linha + '1');
+        }
+
+        else if (strlen(linha) == 6 && sscanf(linha,"pos %d",&num) == 1) {
+            int linha, coluna;
+            if (num == 0) {
+                for (linha = 0; linha < 8; linha++) {
+                    for (coluna = 0; coluna < 8; coluna++) {
+                        if (linha == 4 && coluna == 4) e->tab[coluna][linha] = BRANCA;
+                        else e->tab[coluna][linha] = VAZIO;
+                    }
+                }
+            } else {
+                for (linha = 0; linha < 8; linha++) {
+                    for (coluna = 0; coluna < 8; coluna++) {
+                        if (linha == 4 && coluna == 4) e->tab[coluna][linha] = PRETA;
+                        else e->tab[coluna][linha] = VAZIO;
+                    }
+                }
+                //falta acertar a array tenho que puxar tudo pra esquerda
+                for (int i = 0; i < num; i++) {
+                    e->tab[e->jogadas[i].jogador1.coluna][e->jogadas[i].jogador1.linha] = PRETA;
+                    e->tab[e->jogadas[i].jogador2.coluna][e->jogadas[i].jogador2.linha] = PRETA;
+                    if (i==num-1) {
+                        e->tab[e->jogadas[i].jogador1.coluna][e->jogadas[i].jogador1.linha] = PRETA;
+                        e->tab[e->jogadas[i].jogador2.coluna][e->jogadas[i].jogador2.linha] = BRANCA;
+                        e->ultima_jogada.linha = e->jogadas[i].jogador2.linha;
+                        e->ultima_jogada.coluna = e->jogadas[i].jogador2.coluna;
+                    }
+                }
+
             }
 
-        //validacao da coordenada
-        else if (strlen(linha) == 3 && sscanf(linha,"%[a-h]%[1-8]",col,lin) == 2) {
+            mostrar_tabuleiro(*e);
+            e->num_jogadas = num-1;
+        }
+            //validacao da coordenada
+        else if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
             coord.coluna = *col - 'a';
             coord.linha = *lin - '1';
             z = jogar(e, coord);
-            if(coord.linha == 0 && coord.coluna == 7 && obter_jogador_atual(count) == 1) {
+            if (coord.linha == 0 && coord.coluna == 7 && obter_jogador_atual(count) == 1) {
+                printf("a jogada não e valida\n");
+                z = 0;
+            } else if (coord.linha == 7 && coord.coluna == 0 && obter_jogador_atual(count) == 2) {
                 printf("a jogada não e valida\n");
                 z = 0;
             }
-                else if (coord.linha == 7 && coord.coluna == 0 && obter_jogador_atual(count) == 2) {
-                    printf("a jogada não e valida\n");
-                    z=0;
-                }
-            }
+        }
 
 
-        //comando que mostra todas as jogadas anteriores
-        else if (strcmp(linha,"movs\n") == 0) {
-            for(int k=0;k < e->num_jogadas; k++) {
-            printf("%d: %c%c %c%c\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
-                    }
-            if(e->jogadas[e->num_jogadas].jogador1.linha !=0 && e->jogadas[e->num_jogadas].jogador1.coluna !=0) {
-                printf("%d: %c%c\n",e->num_jogadas+1, e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
+            //comando que mostra todas as jogadas anteriores
+        else if (strcmp(linha, "movs\n") == 0) {
+            for (int k = 0; k < e->num_jogadas; k++) {
+                printf("%d: %c%c %c%c\n", k + 1, e->jogadas[k].jogador1.coluna + 'a', e->jogadas[k].jogador1.linha + '1',
+                       e->jogadas[k].jogador2.coluna + 'a', e->jogadas[k].jogador2.linha + '1');
             }
+            if (e->jogadas[e->num_jogadas].jogador1.linha != 0 && e->jogadas[e->num_jogadas].jogador1.coluna != 0) {
+                printf("%d: %c%c\n", e->num_jogadas + 1, e->jogadas[e->num_jogadas].jogador1.coluna + 'a',
+                       e->jogadas[e->num_jogadas].jogador1.linha + '1');
             }
+        }
+
 
 
 
@@ -94,11 +128,11 @@ static int count=0;
 
     //organizar o array das jogadas com as coordenadas jogadasd
     if (obter_jogador_atual(count) == 1) {
-        e->jogadas[e->num_jogadas].jogador1.linha = *lin;
-        e->jogadas[e->num_jogadas].jogador1.coluna = *col;
+        e->jogadas[e->num_jogadas].jogador1.linha = *lin - '1';
+        e->jogadas[e->num_jogadas].jogador1.coluna = *col - 'a';
     } else {
-        e->jogadas[e->num_jogadas].jogador2.linha = *lin;
-        e->jogadas[e->num_jogadas].jogador2.coluna = *col;
+        e->jogadas[e->num_jogadas].jogador2.linha = *lin - '1';
+        e->jogadas[e->num_jogadas].jogador2.coluna = *col - 'a';
     }
 
     //jogadas do ultimo jogo
