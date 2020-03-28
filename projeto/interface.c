@@ -1,6 +1,7 @@
 #include "camada_dados.h"
 #include "logica_pograma.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 void mostrar_tabuleiro(ESTADO estado) {
     int coluna,linha;
@@ -40,7 +41,7 @@ static int count=0;
 
         else if (strcmp(linha,"Q\n") == 0) {
             printf("jogo terminado\n");
-            return 0;
+            exit(-1);
             }
         else if (strcmp(linha, "stats\n") == 0) {
             printf("%d PL%d %c%c\n", (e->num_jogadas+1), obter_jogador_atual(count), e->ultima_jogada.coluna + 'a',
@@ -53,20 +54,25 @@ static int count=0;
             }
         else if (strcmp(linha,"movs\n") == 0) {
             for(int k=0;k<e->num_jogadas;k++) {
+                if (e->jogadas[k].jogador2.coluna == 0 && e->jogadas[k].jogador2.linha == 0) {
+                    printf("%d: %c%c\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha);
+                }
+                else {
             printf("%d: %c%c %c%c\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
+                    }
             }
 
         }
 
 
         //files
-        else if (strcmp(linha, "gr\n") == 0 ) {
+        else if (strcmp(linha, "gravar pos\n") == 0 ) {
             gravador(e);
 
              }
         else if ((strcmp(linha, "ler\n")) == 0) {
             FILE *fout;
-            fout = fopen("jogo.txt", "r");
+            fout = fopen("pos.txt", "r");
 
             fclose(fout);
         }

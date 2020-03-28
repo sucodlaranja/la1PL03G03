@@ -46,7 +46,7 @@ void gravador(ESTADO *e) {
     FILE *fout;
     int coluna,linha;
     char tabuleiro[8][8];
-    fout = fopen("jogo.txt","w+");
+    fout = fopen("pos.txt","w+");
 
     //tabuleiro
     for (linha = 0; linha < 8; linha++) {
@@ -66,9 +66,12 @@ void gravador(ESTADO *e) {
         }
         printf("\n");
     }
+    printf("\n");
     for(int k=0;k<e->num_jogadas;k++) {
         printf("%d: %c%c %c%c\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
     }
+
     fclose(fout);
 }
+
 

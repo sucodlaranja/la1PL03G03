@@ -18,6 +18,14 @@ ESTADO *inicializar_estado() {
                     else e->tab[coluna][linha] = VAZIO;
         }
     }
+
+    for(int i = 0; i < 32; i++) {
+        e->jogadas[i].jogador1.linha = 0;
+        e->jogadas[i].jogador1.coluna = 0;
+        e->jogadas[i].jogador2.linha = 0;
+        e->jogadas[i].jogador2.coluna = 0;
+    }
+
     return e;
 }
 
