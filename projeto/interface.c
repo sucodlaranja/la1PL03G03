@@ -49,39 +49,14 @@ int num;
                    e->ultima_jogada.linha + '1');
         }
 
-        else if (strlen(linha) == 6 && sscanf(linha,"pos %d",&num) == 1) {
-            int linha, coluna;
-            if (num == 0) {
-                for (linha = 0; linha < 8; linha++) {
-                    for (coluna = 0; coluna < 8; coluna++) {
-                        if (linha == 4 && coluna == 4) e->tab[coluna][linha] = BRANCA;
-                        else e->tab[coluna][linha] = VAZIO;
-                    }
-                }
-            } else {
-                for (linha = 0; linha < 8; linha++) {
-                    for (coluna = 0; coluna < 8; coluna++) {
-                        if (linha == 4 && coluna == 4) e->tab[coluna][linha] = PRETA;
-                        else e->tab[coluna][linha] = VAZIO;
-                    }
-                }
-                //falta acertar a array tenho que puxar tudo pra esquerda
-                for (int i = 0; i < num; i++) {
-                    e->tab[e->jogadas[i].jogador1.coluna][e->jogadas[i].jogador1.linha] = PRETA;
-                    e->tab[e->jogadas[i].jogador2.coluna][e->jogadas[i].jogador2.linha] = PRETA;
-                    if (i==num-1) {
-                        e->tab[e->jogadas[i].jogador1.coluna][e->jogadas[i].jogador1.linha] = PRETA;
-                        e->tab[e->jogadas[i].jogador2.coluna][e->jogadas[i].jogador2.linha] = BRANCA;
-                        e->ultima_jogada.linha = e->jogadas[i].jogador2.linha;
-                        e->ultima_jogada.coluna = e->jogadas[i].jogador2.coluna;
-                    }
-                }
-
-            }
-
+//falta o filtro da variavel
+        else if ((strlen(linha) == 6 || strlen(linha) == 7) && sscanf(linha,"pos %d",&num) == 1 && num>0 && num < e->num_jogadas) {
+            posicoes(e,num);
             mostrar_tabuleiro(*e);
-            e->num_jogadas = num-1;
+            if(obter_jogador_atual(count) == 2) count++;
         }
+
+
             //validacao da coordenada
         else if (strlen(linha) == 3 && sscanf(linha, "%[a-h]%[1-8]", col, lin) == 2) {
             coord.coluna = *col - 'a';
@@ -127,13 +102,7 @@ int num;
     }
 
     //organizar o array das jogadas com as coordenadas jogadasd
-    if (obter_jogador_atual(count) == 1) {
-        e->jogadas[e->num_jogadas].jogador1.linha = *lin - '1';
-        e->jogadas[e->num_jogadas].jogador1.coluna = *col - 'a';
-    } else {
-        e->jogadas[e->num_jogadas].jogador2.linha = *lin - '1';
-        e->jogadas[e->num_jogadas].jogador2.coluna = *col - 'a';
-    }
+    array(e,count,lin,col);
 
     //jogadas do ultimo jogo
     if(coord.linha == 0 && coord.coluna == 7 && obter_jogador_atual(count) == 2) {
