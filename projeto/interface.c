@@ -8,8 +8,8 @@ void mostrar_tabuleiro(ESTADO estado) {
     char tabuleiro[8][8];
     for (linha = 0; linha < 8; linha++) {
         for (coluna = 0; coluna < 8; coluna++) {
-            if (linha == 0 && coluna == 7) tabuleiro[coluna][linha] = '2';
-            else if (linha == 7 && coluna == 0) tabuleiro[coluna][linha] = '1';
+            if (estado.tab[coluna][linha] == DOIS) tabuleiro[coluna][linha] = '2';
+            else if (estado.tab[coluna][linha] == UM) tabuleiro[coluna][linha] = '1';
             else if (estado.tab[coluna][linha] == BRANCA) tabuleiro[coluna][linha] = '*';
             else if (estado.tab[coluna][linha] == PRETA) tabuleiro[coluna][linha] = '#';
             else tabuleiro[coluna][linha] = '.';
@@ -37,6 +37,7 @@ int num;
     int z = 0;
 
     while (z == 0) {
+        printf("#%d PL%d %c%c ->", (e->num_jogadas + 1), obter_jogador_atual(count), e->ultima_jogada.coluna + 'a',e->ultima_jogada.linha + '1');
         fgets(linha, BUF_SIZE, stdin);
         if (strcmp(linha, "Q\n") == 0) {
             printf("jogo terminado\n");
@@ -44,12 +45,7 @@ int num;
         }
 
             //prompt
-        else if (strcmp(linha, "stats\n") == 0) {
-            printf("%d PL%d %c%c\n", (e->num_jogadas + 1), obter_jogador_atual(count), e->ultima_jogada.coluna + 'a',
-                   e->ultima_jogada.linha + '1');
-        }
 
-//falta o filtro da variavel
         else if ((strlen(linha) == 6 || strlen(linha) == 7) && sscanf(linha,"pos %d",&num) == 1 && num>0 && num < e->num_jogadas) {
             posicoes(e,num);
             mostrar_tabuleiro(*e);
@@ -90,12 +86,59 @@ int num;
 
         //files
         else if (strcmp(linha, "gravar pos\n") == 0 ) {
-            gravador(e);
+            FILE *fout;
+            int coluna,linha;
+            char tabuleiro[8][8];
+            fout = fopen("pos.txt","w+");
+
+            //tabuleiro
+            for (linha = 0; linha < 8; linha++) {
+                for (coluna = 0; coluna < 8; coluna++) {
+                    if (e->tab[coluna][linha] == DOIS) tabuleiro[coluna][linha] = '2';
+                    else if (e->tab[coluna][linha] == UM) tabuleiro[coluna][linha] = '1';
+                    else if (e->tab[coluna][linha] == BRANCA) tabuleiro[coluna][linha] = '*';
+                    else if (e->tab[coluna][linha] == PRETA) tabuleiro[coluna][linha] = '#';
+                    else tabuleiro[coluna][linha] = '.';
+                }
+            }
+
+            for (linha = 0; linha < 8; linha++) {
+
+                for (coluna = 0; coluna < 8; coluna++) {
+                    printf("%c",tabuleiro[coluna][linha]);
+                }
+                printf("\n");
+            }
+
+            //linha de separacao
+            printf("\n");
+
+            //jogadas
+            for(int k=0;k<e->num_jogadas;k++) {
+                printf("%d: %d%d %d%d\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
+            }
+            if(e->jogadas[e->num_jogadas].jogador1.linha !=0 && e->jogadas[e->num_jogadas].jogador1.coluna !=0) {
+                printf("%d: %d%d\n",e->num_jogadas+1, e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
+            }
+
+            fclose(fout);
+            return 1;
              }
         else if ((strcmp(linha, "ler\n")) == 0) {
-            leitor(e);
+            FILE *fout;
+            int coluna=0,linha=0;
+            char h;
+            fout = fopen("pos.txt","r");
+            h=fgetc(fout);
+            while (coluna != 8) {
+                if (h == '\n') coluna=0,linha++;
+                else if (h == '1') e->tab[coluna][linha] = UM, coluna++;
+                else if (h == '*') e->tab[coluna][linha] = BRANCA, coluna++;
+                else if (h == '#') e->tab[coluna][linha] = PRETA, coluna++;
+                else e->tab[coluna][linha] = DOIS, coluna++;
+            }
+            fclose(fout);
         }
-
     }
 
     //organizar o array das jogadas com as coordenadas jogadasd

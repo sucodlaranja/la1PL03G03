@@ -1,7 +1,7 @@
 
 #ifndef PROJETO_CAMADA_DADOS_H
 #define BUF_SIZE 1024
-typedef enum {VAZIO, BRANCA, PRETA} CASA;
+typedef enum {VAZIO, BRANCA, PRETA,UM,DOIS} CASA;
 typedef struct {
     int coluna;
     int linha;
