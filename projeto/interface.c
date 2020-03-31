@@ -93,10 +93,7 @@ int num;
             gravador(e);
              }
         else if ((strcmp(linha, "ler\n")) == 0) {
-            FILE *fout;
-            fout = fopen("pos.txt", "r");
-
-            fclose(fout);
+            leitor(e);
         }
 
     }

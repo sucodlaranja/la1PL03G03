@@ -81,6 +81,29 @@ void gravador(ESTADO *e) {
     fclose(fout);
 }
 
+void leitor(ESTADO *e) {
+    FILE *fout;
+    int coluna,linha;
+    char tabuleiro[8][8];
+    fout = fopen("pos.txt","r");
+
+    for (linha = 0; linha < 8; linha++) {
+
+        for (coluna = 0; coluna < 8; coluna++) {
+            scanf("%c",tabuleiro[coluna][linha]);
+        }
+        scanf("\n");
+    }
+    for(int k=0;k<e->num_jogadas;k++) {
+        scanf("%d: %c%c %c%c\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
+    }
+    if(e->jogadas[e->num_jogadas].jogador1.linha !=0 && e->jogadas[e->num_jogadas].jogador1.coluna !=0) {
+        scanf("%d: %c%c\n",e->num_jogadas+1, e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
+    }
+
+    fclose(fout);
+}
+
 
 void posicoes(ESTADO *e,int num) {
     int linha, coluna;
