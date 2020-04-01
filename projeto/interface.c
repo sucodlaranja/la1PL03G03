@@ -85,27 +85,27 @@ int num;
         //files
         else if (strcmp(linha, "gravar pos\n") == 0 ) {
             FILE *fout;
-            int coluna,linha;
+            int c,l;
             char tabuleiro[8][8];
-            fout = fopen("pos.txt","w+");
-
-            //tabuleiro
-            for (linha = 0; linha < 8; linha++) {
-                for (coluna = 0; coluna < 8; coluna++) {
-                    if (e->tab[coluna][linha] == DOIS) tabuleiro[coluna][linha] = '2';
-                    else if (e->tab[coluna][linha] == UM) tabuleiro[coluna][linha] = '1';
-                    else if (e->tab[coluna][linha] == BRANCA) tabuleiro[coluna][linha] = '*';
-                    else if (e->tab[coluna][linha] == PRETA) tabuleiro[coluna][linha] = '#';
-                    else tabuleiro[coluna][linha] = '.';
+            for (l = 0; l < 8; l++) {
+                for (c = 0; c < 8; c++) {
+                    if (e->tab[c][l] == DOIS) tabuleiro[c][l] = '2';
+                    else if (e->tab[c][l] == UM) tabuleiro[c][l] = '1';
+                    else if (e->tab[c][l] == BRANCA) tabuleiro[c][l] = '*';
+                    else if (e->tab[c][l] == PRETA) tabuleiro[c][l] = '#';
+                    else tabuleiro[c][l] = '.';
                 }
             }
+            fout = fopen("pos.txt","w");
 
-            for (linha = 0; linha < 8; linha++) {
+            //tabuleiro
 
-                for (coluna = 0; coluna < 8; coluna++) {
-                    fprintf(fout,"%c",tabuleiro[coluna][linha]);
+            for (l = 0; l < 8; l++) {
+
+                for (c = 0; c < 8; c++) {
+                    fprintf(fout,"%c",tabuleiro[c][l]);
                 }
-                printf("\n");
+                fprintf(fout,"\n");
             }
 
             //linha de separacao
@@ -113,27 +113,26 @@ int num;
 
             //jogadas
             for(int k=0;k<e->num_jogadas;k++) {
-                fprintf(fout,"%d: %d%d %d%d\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
+                fprintf(fout,"%d%d %d%d\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
             }
             if(e->jogadas[e->num_jogadas].jogador1.linha !=0 && e->jogadas[e->num_jogadas].jogador1.coluna !=0) {
-                fprintf(fout,"%d: %d%d\n",e->num_jogadas+1, e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
+                fprintf(fout, "%d%d\n",e->num_jogadas+1, e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
             }
 
             fclose(fout);
-            return 1;
              }
         else if ((strcmp(linha,"ler\n")) == 0) {
             FILE *fout;
-            int coluna=0,linha=0;
+            int colu=0,linh=0;
             char h;
             fout = fopen("pos.txt","r");
             h=fgetc(fout);
-            while (coluna != 8) {
-                if (h == '\n') coluna=0,linha++;
-                else if (h == '1') e->tab[coluna][linha] = UM, coluna++;
-                else if (h == '*') e->tab[coluna][linha] = BRANCA, coluna++;
-                else if (h == '#') e->tab[coluna][linha] = PRETA, coluna++;
-                else e->tab[coluna][linha] = DOIS, coluna++;
+            while (linh != 8) {
+                if (h == '\n') colu=0,linh++;
+                else if (h == '1') e->tab[colu][linh] = UM, colu++;
+                else if (h == '*') e->tab[colu][linh] = BRANCA, colu++;
+                else if (h == '#') e->tab[colu][linh] = PRETA, colu++;
+                else e->tab[colu][linh] = DOIS, colu++;
             }
             fclose(fout);
         }
