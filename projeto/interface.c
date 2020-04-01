@@ -29,6 +29,7 @@ void mostrar_tabuleiro(ESTADO estado) {
 
 int interpretador(ESTADO *e) {
     char linha[BUF_SIZE];
+    char nome[BUF_SIZE];
 static int count=0;
     char col[2], lin[2];
 int num;
@@ -83,7 +84,7 @@ int num;
 
 
         //files
-        else if (strcmp(linha, "gravar pos\n") == 0 ) {
+        else if (sscanf(linha,"gravar %s",nome) == 1 ) {
             FILE *fout;
             int c,l;
             char tabuleiro[8][8];
@@ -96,7 +97,7 @@ int num;
                     else tabuleiro[c][l] = '.';
                 }
             }
-            fout = fopen("pos.txt","w");
+            fout = fopen(nome,"w");
 
             //tabuleiro
 
@@ -123,11 +124,11 @@ int num;
              }
 
 
-        else if ((strcmp(linha,"ler\n")) == 0) {
+        else if (sscanf(linha,"ler %s",nome) == 1 ) {
             FILE *fout;
             int colu=0,linh=0;
             char h;
-            fout = fopen("pos.txt","r");
+            fout = fopen(nome,"r");
             h=fgetc(fout);
             while (linh != 8) {
                 if (h == '\n') colu=0,linh++;
@@ -139,7 +140,7 @@ int num;
 
             int modifica = 0,n=0,j1c=0,j1l=0,j2c=0,j2l;
             while(fscanf(fout,"%d",&modifica) != EOF) {
-                if (fscanf(fout,"%d%d %d%d",&j1c,&j1l,&j2c,j2l)) {
+                if (fscanf(fout,"%d%d %d%d",&j1c,&j1l,&j2c,&j2l)) {
                     e->jogadas[n].jogador1.coluna=j1c;
                     e->jogadas[n].jogador1.linha=j1l;
                     e->jogadas[n].jogador2.coluna=j2c;
@@ -158,12 +159,12 @@ int num;
     //jogadas do ultimo jogo
     if(coord.linha == 7 && coord.coluna == 7 && obter_jogador_atual(count) == 2) {
         printf("Parabens!, Jogador 2 ganhou o jogo");
-        return 0;
+        exit(-1);
 
     }
     else if (coord.linha == 0 && coord.coluna == 0 && obter_jogador_atual(count) == 1) {
         printf("Parabens!, Jogador 1 ganhou o jogo");
-        return 0;
+        exit(-1);
         }
 
 
