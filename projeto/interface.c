@@ -16,7 +16,7 @@ void mostrar_tabuleiro(ESTADO estado) {
             }
         }
 
-        for (linha = 0; linha < 8; linha++) {
+        for (linha = 7; linha > -1; linha--) {
             
             for (coluna = 0; coluna < 8; coluna++) {
                 printf("%c",tabuleiro[coluna][linha]);
@@ -43,8 +43,6 @@ int num;
             printf("jogo terminado\n");
             exit(-1);
         }
-
-            //prompt
 
         else if ((strlen(linha) == 6 || strlen(linha) == 7) && sscanf(linha,"pos %d",&num) == 1 && num>0 && num < e->num_jogadas) {
             posicoes(e,num);
@@ -105,26 +103,26 @@ int num;
             for (linha = 0; linha < 8; linha++) {
 
                 for (coluna = 0; coluna < 8; coluna++) {
-                    printf("%c",tabuleiro[coluna][linha]);
+                    fprintf(fout,"%c",tabuleiro[coluna][linha]);
                 }
                 printf("\n");
             }
 
             //linha de separacao
-            printf("\n");
+            fprintf(fout,"\n");
 
             //jogadas
             for(int k=0;k<e->num_jogadas;k++) {
-                printf("%d: %d%d %d%d\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
+                fprintf(fout,"%d: %d%d %d%d\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
             }
             if(e->jogadas[e->num_jogadas].jogador1.linha !=0 && e->jogadas[e->num_jogadas].jogador1.coluna !=0) {
-                printf("%d: %d%d\n",e->num_jogadas+1, e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
+                fprintf(fout,"%d: %d%d\n",e->num_jogadas+1, e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
             }
 
             fclose(fout);
             return 1;
              }
-        else if ((strcmp(linha, "ler\n")) == 0) {
+        else if ((strcmp(linha,"ler\n")) == 0) {
             FILE *fout;
             int coluna=0,linha=0;
             char h;
@@ -145,12 +143,12 @@ int num;
     array(e,count,lin,col);
 
     //jogadas do ultimo jogo
-    if(coord.linha == 0 && coord.coluna == 7 && obter_jogador_atual(count) == 2) {
+    if(coord.linha == 7 && coord.coluna == 7 && obter_jogador_atual(count) == 2) {
         printf("Parabens!, Jogador 2 ganhou o jogo");
         return 0;
 
     }
-    else if (coord.linha == 7 && coord.coluna == 0 && obter_jogador_atual(count) == 1) {
+    else if (coord.linha == 0 && coord.coluna == 0 && obter_jogador_atual(count) == 1) {
         printf("Parabens!, Jogador 1 ganhou o jogo");
         return 0;
         }

@@ -5,7 +5,7 @@
 
 //valida a jogada
 int jogar (ESTADO *e, COORDENADA c) {
-    if (((c.coluna == e->ultima_jogada.coluna) || (c.coluna - 1 == e->ultima_jogada.coluna) || (c.coluna + 1 == e->ultima_jogada.coluna)) && (e->tab[c.coluna][c.linha] == VAZIO)){
+    if (((c.coluna == e->ultima_jogada.coluna) || (c.coluna - 1 == e->ultima_jogada.coluna) || (c.coluna + 1 == e->ultima_jogada.coluna)) && ((e->tab[c.coluna][c.linha] == VAZIO) || (e->tab[c.coluna][c.linha] == DOIS) || (e->tab[c.coluna][c.linha] == UM))) {
         if ((c.linha == e->ultima_jogada.linha) || (c.linha - 1 == e->ultima_jogada.linha) || (c.linha + 1 == e->ultima_jogada.linha)){
             printf("a jogar %c%d\n", c.coluna +'a', c.linha + 1);
             return 1;
@@ -48,6 +48,8 @@ void posicoes(ESTADO *e,int num) {
         for (linha = 0; linha < 8; linha++) {
             for (coluna = 0; coluna < 8; coluna++) {
                 if (linha == 4 && coluna == 4) e->tab[coluna][linha] = BRANCA;
+                else if (linha == 0 && coluna == 0) e->tab[coluna][linha] = UM;
+                else if (linha == 7 && coluna == 7) e->tab[coluna][linha] = DOIS;
                 else e->tab[coluna][linha] = VAZIO;
             }
         }
@@ -55,6 +57,8 @@ void posicoes(ESTADO *e,int num) {
         for (linha = 0; linha < 8; linha++) {
             for (coluna = 0; coluna < 8; coluna++) {
                 if (linha == 4 && coluna == 4) e->tab[coluna][linha] = PRETA;
+                else if (linha == 0 && coluna == 0) e->tab[coluna][linha] = UM;
+                else if (linha == 7 && coluna == 7) e->tab[coluna][linha] = DOIS;
                 else e->tab[coluna][linha] = VAZIO;
             }
         }
