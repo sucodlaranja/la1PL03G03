@@ -116,11 +116,13 @@ int num;
                 fprintf(fout,"%d%d %d%d\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
             }
             if(e->jogadas[e->num_jogadas].jogador1.linha !=0 && e->jogadas[e->num_jogadas].jogador1.coluna !=0) {
-                fprintf(fout, "%d%d\n",e->num_jogadas+1, e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
+                fprintf(fout, "%d%d\n",e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
             }
 
             fclose(fout);
              }
+
+
         else if ((strcmp(linha,"ler\n")) == 0) {
             FILE *fout;
             int colu=0,linh=0;
@@ -134,7 +136,19 @@ int num;
                 else if (h == '#') e->tab[colu][linh] = PRETA, colu++;
                 else e->tab[colu][linh] = DOIS, colu++;
             }
+
+            int modifica = 0,n=0,j1c=0,j1l=0,j2c=0,j2l;
+            while(fscanf(fout,"%d",&modifica) != EOF) {
+                if (fscanf(fout,"%d%d %d%d",&j1c,&j1l,&j2c,j2l)) {
+                    e->jogadas[n].jogador1.coluna=j1c;
+                    e->jogadas[n].jogador1.linha=j1l;
+                    e->jogadas[n].jogador2.coluna=j2c;
+                    e->jogadas[n].jogador2.linha=j2l;
+                    n++;
+                }
+            }
             fclose(fout);
+            mostrar_tabuleiro(*e);
         }
     }
 
