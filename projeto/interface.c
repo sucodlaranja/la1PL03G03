@@ -101,7 +101,7 @@ int num;
 
             //tabuleiro
 
-            for (l = 0; l < 8; l++) {
+            for (l = 7; l > -1; l--) {
 
                 for (c = 0; c < 8; c++) {
                     fprintf(fout,"%c",tabuleiro[c][l]);
@@ -114,44 +114,68 @@ int num;
 
             //jogadas
             for(int k=0;k<e->num_jogadas;k++) {
-                fprintf(fout,"%d%d %d%d\n",k+1, e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
+                fprintf(fout,"%d %d %d %d\n",e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
             }
             if(e->jogadas[e->num_jogadas].jogador1.linha !=0 && e->jogadas[e->num_jogadas].jogador1.coluna !=0) {
-                fprintf(fout, "%d%d\n",e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
+                fprintf(fout,"%d %d\n",e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
             }
 
             fclose(fout);
              }
 
-
         else if (sscanf(linha,"ler %s",nome) == 1 ) {
             FILE *fout;
-            int colu=0,linh=0;
+            int colu=0,linh=7;
             char h;
             fout = fopen(nome,"r");
-            h=fgetc(fout);
-            while (linh != 8) {
-                if (h == '\n') colu=0,linh++;
+            if (fopen == NULL) {
+                printf("este ficheiro não existe\n");
+                return (-1);
+            }
+            else {
+
+                //tabuleiro
+            while (linh != -1) {
+                h=fgetc(fout);
+                if (h == '\n') colu=0,linh--;
                 else if (h == '1') e->tab[colu][linh] = UM, colu++;
                 else if (h == '*') e->tab[colu][linh] = BRANCA, colu++;
                 else if (h == '#') e->tab[colu][linh] = PRETA, colu++;
+                else if (h == '.') e->tab[colu][linh] = VAZIO, colu++;
                 else e->tab[colu][linh] = DOIS, colu++;
             }
 
-            int modifica = 0,n=0,j1c=0,j1l=0,j2c=0,j2l;
-            while(fscanf(fout,"%d",&modifica) != EOF) {
-                if (fscanf(fout,"%d%d %d%d",&j1c,&j1l,&j2c,&j2l)) {
-                    e->jogadas[n].jogador1.coluna=j1c;
-                    e->jogadas[n].jogador1.linha=j1l;
-                    e->jogadas[n].jogador2.coluna=j2c;
-                    e->jogadas[n].jogador2.linha=j2l;
-                    n++;
+            //movs
+            int n=0,j1c=0,j1l=0,j2c=0,j2l=0,contador=0;
+           char line[BUF_SIZE];
+           while (fgets(line,BUF_SIZE,fout) != NULL) {
+               if (sscanf(line,"%d %d %d %d",&j1c,&j1l,&j2c,&j2l) == 4) {
+                   e->jogadas[n].jogador1.coluna = j1c;
+                   e->jogadas[n].jogador1.linha = j1l;
+                   e->jogadas[n].jogador2.linha = j2l;
+                   e->jogadas[n].jogador2.coluna = j2c;
+                   n++;
+               }
+               else if (sscanf(line,"%d %d ",&j1c,&j1l) == 2) {
+                   e->jogadas[n].jogador1.coluna = j1c;
+                   e->jogadas[n].jogador1.linha = j1l;
+                   contador++;
                 }
-            }
+           }
+           e->num_jogadas=n;
+           if(contador == 1) {
+               e->ultima_jogada.coluna = j1c;
+               e->ultima_jogada.linha = j1l;
+           }
+           else {
+               e->ultima_jogada.coluna = j2c;
+               e->ultima_jogada.linha = j2l;
+           }
+           count=contador;
             fclose(fout);
             mostrar_tabuleiro(*e);
         }
-    }
+    } }
 
     //organizar o array das jogadas com as coordenadas jogadasd
     array(e,count,lin,col);
