@@ -1,5 +1,6 @@
 #include "camada_dados.h"
 #include "logica_pograma.h"
+#include "lista.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -45,6 +46,50 @@ int num;
             exit(-1);
         }
 
+        else if (strcmp(linha, "jog\n") == 0) {
+            int x,y;
+            LISTA posicoes = criar_lista();
+
+            //funciona
+            for(x=(e->ultima_jogada.linha-1); x < (e->ultima_jogada.linha+1); x++) {
+                for(y = (e->ultima_jogada.coluna-1); y < (e->ultima_jogada.coluna+1); y++) {
+                    if(x>=0 && x<=8 && y<=8 && y>=0 && e->tab[y][x] == VAZIO) {
+                    COORDENADA valor;
+                    valor.coluna = x;
+                    valor.linha = y;
+                    posicoes = insere_cabeca(posicoes,valor);
+                        }
+                    }
+                }
+
+
+            while(posicoes != NULL && posicoes->prox !=NULL) {
+                if(obter_jogador_atual(count) == 1) {
+                    if((posicoes->valor->coluna + posicoes->valor->linha) < (posicoes->prox->valor->coluna + posicoes->prox->valor->linha) ) {
+                        posicoes->prox->valor->linha = posicoes->valor->linha;
+                        posicoes->prox->valor->coluna = posicoes->valor->coluna;
+                        posicoes= proximo(posicoes);
+                    }
+                    else posicoes = proximo(posicoes);
+                }
+                else {
+                    if(( posicoes->valor->coluna - 7 ) + ( posicoes->valor->linha - 7) < ( posicoes->prox->valor->coluna - 7 ) + (posicoes->prox->valor->linha - 7)) {
+                        posicoes->prox->valor->linha = posicoes->valor->linha;
+                        posicoes->prox->valor->coluna = posicoes->valor->coluna;
+                        posicoes= proximo(posicoes);
+                    }
+                    else posicoes = proximo(posicoes);
+                }
+            }
+            *col = posicoes->valor->linha + 'a';
+            *lin = posicoes->valor->coluna + '1';
+            coord.coluna = *col - 'a';
+            coord.linha = *lin - '1';
+            z = jogar(e,coord);
+
+        }
+
+
         else if ((strlen(linha) == 6 || strlen(linha) == 7) && sscanf(linha,"pos %d",&num) == 1 && num>0 && num < e->num_jogadas) {
             posicoes(e,num);
             mostrar_tabuleiro(*e);
@@ -78,6 +123,7 @@ int num;
                        e->jogadas[e->num_jogadas].jogador1.linha + '1');
             }
         }
+
 
 
 
@@ -122,6 +168,8 @@ int num;
 
             fclose(fout);
              }
+
+
 
         else if (sscanf(linha,"ler %s",nome) == 1 ) {
             FILE *fout;
@@ -174,10 +222,13 @@ int num;
            count=contador;
             fclose(fout);
             mostrar_tabuleiro(*e);
+            }
         }
-    } }
+    }
 
-    //organizar o array das jogadas com as coordenadas jogadasd
+
+
+    //organizar o array das jogadas com as coordenadas jogadas
     array(e,count,lin,col);
 
     //jogadas do ultimo jogo

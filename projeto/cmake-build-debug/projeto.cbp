@@ -90,6 +90,12 @@
 		<Unit filename="/home/joao/Desktop/la1PL03G03-master/projeto/interface.h">
 			<Option target="projeto"/>
 		</Unit>
+		<Unit filename="/home/joao/Desktop/la1PL03G03-master/projeto/lista.c">
+			<Option target="projeto"/>
+		</Unit>
+		<Unit filename="/home/joao/Desktop/la1PL03G03-master/projeto/lista.h">
+			<Option target="projeto"/>
+		</Unit>
 		<Unit filename="/home/joao/Desktop/la1PL03G03-master/projeto/logica_pograma.c">
 			<Option target="projeto"/>
 		</Unit>

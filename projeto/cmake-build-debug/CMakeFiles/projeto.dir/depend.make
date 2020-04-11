@@ -7,7 +7,12 @@ CMakeFiles/projeto.dir/camada_dados.c.o: ../logica_pograma.h
 
 CMakeFiles/projeto.dir/interface.c.o: ../camada_dados.h
 CMakeFiles/projeto.dir/interface.c.o: ../interface.c
+CMakeFiles/projeto.dir/interface.c.o: ../lista.h
 CMakeFiles/projeto.dir/interface.c.o: ../logica_pograma.h
+
+CMakeFiles/projeto.dir/lista.c.o: ../camada_dados.h
+CMakeFiles/projeto.dir/lista.c.o: ../lista.c
+CMakeFiles/projeto.dir/lista.c.o: ../lista.h
 
 CMakeFiles/projeto.dir/logica_pograma.c.o: ../camada_dados.h
 CMakeFiles/projeto.dir/logica_pograma.c.o: ../interface.h

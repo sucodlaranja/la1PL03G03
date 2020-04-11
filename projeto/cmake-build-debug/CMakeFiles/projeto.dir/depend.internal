@@ -8,7 +8,12 @@ CMakeFiles/projeto.dir/camada_dados.c.o
 CMakeFiles/projeto.dir/interface.c.o
  /home/joao/Desktop/la1PL03G03-master/projeto/camada_dados.h
  /home/joao/Desktop/la1PL03G03-master/projeto/interface.c
+ /home/joao/Desktop/la1PL03G03-master/projeto/lista.h
  /home/joao/Desktop/la1PL03G03-master/projeto/logica_pograma.h
+CMakeFiles/projeto.dir/lista.c.o
+ /home/joao/Desktop/la1PL03G03-master/projeto/camada_dados.h
+ /home/joao/Desktop/la1PL03G03-master/projeto/lista.c
+ /home/joao/Desktop/la1PL03G03-master/projeto/lista.h
 CMakeFiles/projeto.dir/logica_pograma.c.o
  /home/joao/Desktop/la1PL03G03-master/projeto/camada_dados.h
  /home/joao/Desktop/la1PL03G03-master/projeto/interface.h

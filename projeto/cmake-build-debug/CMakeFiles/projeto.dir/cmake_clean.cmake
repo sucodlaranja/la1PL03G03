@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/projeto.dir/camada_dados.c.o"
   "CMakeFiles/projeto.dir/interface.c.o"
+  "CMakeFiles/projeto.dir/lista.c.o"
   "CMakeFiles/projeto.dir/logica_pograma.c.o"
   "CMakeFiles/projeto.dir/main.c.o"
   "projeto"
