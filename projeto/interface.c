@@ -51,15 +51,17 @@ int num;
             LISTA posicoes = criar_lista();
 
             //funciona
-            for(x=(e->ultima_jogada.linha-1); x < (e->ultima_jogada.linha+1); x++) {
-                for(y = (e->ultima_jogada.coluna-1); y < (e->ultima_jogada.coluna+1); y++) {
+            for(x=(e->ultima_jogada.linha-1); x < (e->ultima_jogada.linha+2); x++) {
+                for(y = (e->ultima_jogada.coluna-1); y < (e->ultima_jogada.coluna+2); y++) {
                     if(x>=0 && x<=8 && y<=8 && y>=0 && e->tab[y][x] == VAZIO) {
                     COORDENADA valor;
                     valor.coluna = x;
                     valor.linha = y;
                     posicoes = insere_cabeca(posicoes,valor);
+                    printf("%d%d\n",posicoes->valor->coluna,posicoes->valor->linha);
                         }
                     }
+
                 }
 
 
@@ -73,7 +75,7 @@ int num;
                     else posicoes = proximo(posicoes);
                 }
                 else {
-                    if(( posicoes->valor->coluna - 7 ) + ( posicoes->valor->linha - 7) < ( posicoes->prox->valor->coluna - 7 ) + (posicoes->prox->valor->linha - 7)) {
+                    if(abs(( posicoes->valor->coluna - 7 ) + ( posicoes->valor->linha - 7)) < abs(( posicoes->prox->valor->coluna - 7 ) + (posicoes->prox->valor->linha - 7))) {
                         posicoes->prox->valor->linha = posicoes->valor->linha;
                         posicoes->prox->valor->coluna = posicoes->valor->coluna;
                         posicoes= proximo(posicoes);
@@ -83,8 +85,8 @@ int num;
             }
             *col = posicoes->valor->linha + 'a';
             *lin = posicoes->valor->coluna + '1';
-            coord.coluna = *col - 'a';
-            coord.linha = *lin - '1';
+            coord.coluna = posicoes->valor->coluna;
+            coord.linha = posicoes->valor->linha;
             z = jogar(e,coord);
 
         }
