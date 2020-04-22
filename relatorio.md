@@ -1,4 +1,4 @@
-Figura 1 - Tabuleiro inicial, com os respetivos status, numero de jogadas efetuadas, jogador atual, estado, respetivamente.
+Figura 1 
 
 ![](Imagens/figura1.png)
 
