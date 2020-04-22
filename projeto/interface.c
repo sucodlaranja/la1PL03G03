@@ -55,8 +55,8 @@ int num;
                 for(y = (e->ultima_jogada.coluna-1); y < (e->ultima_jogada.coluna+2); y++) {
                     if(x>=0 && x<=8 && y<=8 && y>=0 && e->tab[y][x] == VAZIO) {
                     COORDENADA valor;
-                    valor.coluna = x;
-                    valor.linha = y;
+                    valor.coluna = y;
+                    valor.linha = x;
                     posicoes = insere_cabeca(posicoes,valor);
                     printf("%d%d\n",posicoes->valor->coluna,posicoes->valor->linha);
                         }
@@ -83,8 +83,8 @@ int num;
                     else posicoes = proximo(posicoes);
                 }
             }
-            *col = posicoes->valor->linha + 'a';
-            *lin = posicoes->valor->coluna + '1';
+            *col = posicoes->valor->coluna;
+            *lin = posicoes->valor->linha;
             coord.coluna = posicoes->valor->coluna;
             coord.linha = posicoes->valor->linha;
             z = jogar(e,coord);
