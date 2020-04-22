@@ -34,3 +34,7 @@ Figura 9 - Comando ler a ler a posição gravada na memoria anteriormente.
 
 ![](Imagens/figura9.png)
 
+Comando jog a executar uma jogada pelo jogador.
+
+![](Imagens/figura10.png)
+
