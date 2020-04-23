@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include "logica_pograma.h"
 #include "interface.h"
+#include "lista.h"
 
 //valida a jogada
 int jogar (ESTADO *e, COORDENADA c) {
@@ -98,4 +99,25 @@ void array(ESTADO *e,int count,char *lin,char *col) {
         e->jogadas[e->num_jogadas].jogador2.linha = *lin - '1';
         e->jogadas[e->num_jogadas].jogador2.coluna = *col - 'a';
         }
+}
+
+LISTA criadordeposicoes(ESTADO *e) {
+    int x,y;
+    LISTA posicoes = criar_lista();
+
+    //funciona
+    for(x=(e->ultima_jogada.linha-1); x < (e->ultima_jogada.linha+2); x++) {
+        for(y = (e->ultima_jogada.coluna-1); y < (e->ultima_jogada.coluna+2); y++) {
+            if(x>=0 && x<=7 && y<=7 && y>=0 && e->tab[y][x] == VAZIO) {
+                COORDENADA valor;
+                valor.coluna = y;
+                valor.linha = x;
+                posicoes = insere_cabeca(posicoes,valor);
+                printf("%d%d\n",posicoes->valor->coluna,posicoes->valor->linha);
+            }
+        }
+
+    }
+    return posicoes;
+
 }

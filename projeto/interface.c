@@ -47,23 +47,8 @@ int num;
         }
 
         else if (strcmp(linha, "jog\n") == 0) {
-            int x,y;
-            LISTA posicoes = criar_lista();
-
-            //funciona
-            for(x=(e->ultima_jogada.linha-1); x < (e->ultima_jogada.linha+2); x++) {
-                for(y = (e->ultima_jogada.coluna-1); y < (e->ultima_jogada.coluna+2); y++) {
-                    if(x>=0 && x<=8 && y<=8 && y>=0 && e->tab[y][x] == VAZIO) {
-                    COORDENADA valor;
-                    valor.coluna = y;
-                    valor.linha = x;
-                    posicoes = insere_cabeca(posicoes,valor);
-                        }
-                    }
-
-                }
-
-
+            LISTA  posicoes = criadordeposicoes(e);
+            //euclina
             while(posicoes != NULL && posicoes->prox !=NULL) {
                 if(obter_jogador_atual(count) == 1) {
                     if((posicoes->valor->coluna + posicoes->valor->linha) < (posicoes->prox->valor->coluna + posicoes->prox->valor->linha) ) {
@@ -89,8 +74,28 @@ int num;
             z = jogar(e,coord);
 
         }
+        else if (strcmp(linha, "jog2\n") == 0) {
+            LISTA pos = criadordeposicoes(e);
+            LISTA temp = criar_lista();
+            temp = pos;
+            int k=0;
+
+            while(temp!=NULL) {
+                k++;
+                temp=temp->prox;
+            }
 
 
+            for (int i = 0; i < rand() % k; i++) {
+                pos = pos->prox;
+            }
+            *col = pos->valor->coluna;
+            *lin = pos->valor->linha;
+            coord.coluna = pos->valor->coluna;
+            coord.linha = pos->valor->linha;
+            z = jogar(e,coord);
+
+        }
         else if ((strlen(linha) == 6 || strlen(linha) == 7) && sscanf(linha,"pos %d",&num) == 1 && num>0 && num < e->num_jogadas) {
             posicoes(e,num);
             mostrar_tabuleiro(*e);
@@ -161,10 +166,10 @@ int num;
 
             //jogadas
             for(int k=0;k<e->num_jogadas;k++) {
-                fprintf(fout,"%d %d %d %d\n",e->jogadas[k].jogador1.coluna,e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna,e->jogadas[k].jogador2.linha);
+                fprintf(fout,"%c%d %c%d\n",e->jogadas[k].jogador1.coluna + 'a',e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna +'a',e->jogadas[k].jogador2.linha);
             }
             if(e->jogadas[e->num_jogadas].jogador1.linha !=0 && e->jogadas[e->num_jogadas].jogador1.coluna !=0) {
-                fprintf(fout,"%d %d\n",e->jogadas[e->num_jogadas].jogador1.coluna,e->jogadas[e->num_jogadas].jogador1.linha);
+                fprintf(fout,"%c%d\n",e->jogadas[e->num_jogadas].jogador1.coluna + 'a',e->jogadas[e->num_jogadas].jogador1.linha);
             }
 
             fclose(fout);
@@ -198,26 +203,26 @@ int num;
             int n=0,j1c=0,j1l=0,j2c=0,j2l=0,contador=0;
            char line[BUF_SIZE];
            while (fgets(line,BUF_SIZE,fout) != NULL) {
-               if (sscanf(line,"%d %d %d %d",&j1c,&j1l,&j2c,&j2l) == 4) {
-                   e->jogadas[n].jogador1.coluna = j1c;
+               if (sscanf(line,"%c%d %c%d",&j1c,&j1l,&j2c,&j2l) == 4) {
+                   e->jogadas[n].jogador1.coluna = j1c-'a';
                    e->jogadas[n].jogador1.linha = j1l;
                    e->jogadas[n].jogador2.linha = j2l;
-                   e->jogadas[n].jogador2.coluna = j2c;
+                   e->jogadas[n].jogador2.coluna = j2c- 'a';
                    n++;
                }
-               else if (sscanf(line,"%d %d ",&j1c,&j1l) == 2) {
-                   e->jogadas[n].jogador1.coluna = j1c;
+               else if (sscanf(line,"%c%d ",&j1c,&j1l) == 2) {
+                   e->jogadas[n].jogador1.coluna = j1c-'a';
                    e->jogadas[n].jogador1.linha = j1l;
                    contador++;
                 }
            }
            e->num_jogadas=n;
            if(contador == 1) {
-               e->ultima_jogada.coluna = j1c;
+               e->ultima_jogada.coluna = j1c - 'a';
                e->ultima_jogada.linha = j1l;
            }
            else {
-               e->ultima_jogada.coluna = j2c;
+               e->ultima_jogada.coluna = j2c - 'a';
                e->ultima_jogada.linha = j2l;
            }
            count=contador;
