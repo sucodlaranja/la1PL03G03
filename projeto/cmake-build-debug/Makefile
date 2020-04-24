@@ -48,10 +48,10 @@ RM = /home/joao/Desktop/clion-2019.3.3/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joao/Desktop/la1PL03G03-master/projeto
+CMAKE_SOURCE_DIR = /home/joao/Desktop/projeto
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joao/Desktop/la1PL03G03-master/projeto/cmake-build-debug
+CMAKE_BINARY_DIR = /home/joao/Desktop/projeto/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/Desktop/la1PL03G03-master/projeto/cmake-build-debug/CMakeFiles /home/joao/Desktop/la1PL03G03-master/projeto/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/Desktop/projeto/cmake-build-debug/CMakeFiles /home/joao/Desktop/projeto/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/Desktop/la1PL03G03-master/projeto/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/Desktop/projeto/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,33 +122,6 @@ projeto: cmake_check_build_system
 projeto/fast:
 	$(MAKE) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/build
 .PHONY : projeto/fast
-
-Bot.o: Bot.c.o
-
-.PHONY : Bot.o
-
-# target to build an object file
-Bot.c.o:
-	$(MAKE) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Bot.c.o
-.PHONY : Bot.c.o
-
-Bot.i: Bot.c.i
-
-.PHONY : Bot.i
-
-# target to preprocess a source file
-Bot.c.i:
-	$(MAKE) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Bot.c.i
-.PHONY : Bot.c.i
-
-Bot.s: Bot.c.s
-
-.PHONY : Bot.s
-
-# target to generate assembly for a file
-Bot.c.s:
-	$(MAKE) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Bot.c.s
-.PHONY : Bot.c.s
 
 camada_dados.o: camada_dados.c.o
 
@@ -294,9 +267,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... projeto"
-	@echo "... Bot.o"
-	@echo "... Bot.i"
-	@echo "... Bot.s"
 	@echo "... camada_dados.o"
 	@echo "... camada_dados.i"
 	@echo "... camada_dados.s"
