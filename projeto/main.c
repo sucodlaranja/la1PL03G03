@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "camada_dados.h"
 #include "logica_pograma.h"
 #include "interface.h"

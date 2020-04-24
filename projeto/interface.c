@@ -200,8 +200,8 @@ int num;
             }
 
             //movs
-            int n=0,j1c=0,j1l=0,j2c=0,j2l=0,contador=0;
-           char line[BUF_SIZE];
+            int n=0,j1l=0,j2l=0,contador=0;
+           char line[BUF_SIZE],j1c,j2c;
            while (fgets(line,BUF_SIZE,fout) != NULL) {
                if (sscanf(line,"%c%d %c%d",&j1c,&j1l,&j2c,&j2l) == 4) {
                    e->jogadas[n].jogador1.coluna = j1c-'a';

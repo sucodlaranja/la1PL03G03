@@ -78,6 +78,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/joao/Desktop/la1PL03G03-master/projeto/Bot.c">
+			<Option target="projeto"/>
+		</Unit>
 		<Unit filename="/home/joao/Desktop/la1PL03G03-master/projeto/camada_dados.c">
 			<Option target="projeto"/>
 		</Unit>

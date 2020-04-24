@@ -123,6 +123,33 @@ projeto/fast:
 	$(MAKE) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/build
 .PHONY : projeto/fast
 
+Bot.o: Bot.c.o
+
+.PHONY : Bot.o
+
+# target to build an object file
+Bot.c.o:
+	$(MAKE) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Bot.c.o
+.PHONY : Bot.c.o
+
+Bot.i: Bot.c.i
+
+.PHONY : Bot.i
+
+# target to preprocess a source file
+Bot.c.i:
+	$(MAKE) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Bot.c.i
+.PHONY : Bot.c.i
+
+Bot.s: Bot.c.s
+
+.PHONY : Bot.s
+
+# target to generate assembly for a file
+Bot.c.s:
+	$(MAKE) -f CMakeFiles/projeto.dir/build.make CMakeFiles/projeto.dir/Bot.c.s
+.PHONY : Bot.c.s
+
 camada_dados.o: camada_dados.c.o
 
 .PHONY : camada_dados.o
@@ -267,6 +294,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... projeto"
+	@echo "... Bot.o"
+	@echo "... Bot.i"
+	@echo "... Bot.s"
 	@echo "... camada_dados.o"
 	@echo "... camada_dados.i"
 	@echo "... camada_dados.s"

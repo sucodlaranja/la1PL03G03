@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "/home/joao/Desktop/la1PL03G03-master/projeto/Bot.c" "/home/joao/Desktop/la1PL03G03-master/projeto/cmake-build-debug/CMakeFiles/projeto.dir/Bot.c.o"
   "/home/joao/Desktop/la1PL03G03-master/projeto/camada_dados.c" "/home/joao/Desktop/la1PL03G03-master/projeto/cmake-build-debug/CMakeFiles/projeto.dir/camada_dados.c.o"
   "/home/joao/Desktop/la1PL03G03-master/projeto/interface.c" "/home/joao/Desktop/la1PL03G03-master/projeto/cmake-build-debug/CMakeFiles/projeto.dir/interface.c.o"
   "/home/joao/Desktop/la1PL03G03-master/projeto/lista.c" "/home/joao/Desktop/la1PL03G03-master/projeto/cmake-build-debug/CMakeFiles/projeto.dir/lista.c.o"
