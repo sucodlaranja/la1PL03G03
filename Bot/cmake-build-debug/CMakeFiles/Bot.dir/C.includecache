@@ -1,0 +1,48 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/joao/CLionProjects/Bot/Camada de dados.c
+Camada de dados.h
+/home/joao/CLionProjects/Bot/Camada de dados.h
+stdlib.h
+-
+
+/home/joao/CLionProjects/Bot/Camada de dados.h
+
+/home/joao/CLionProjects/Bot/Listas.c
+stdlib.h
+-
+Listas.h
+/home/joao/CLionProjects/Bot/Listas.h
+
+/home/joao/CLionProjects/Bot/Listas.h
+Camada de dados.h
+/home/joao/CLionProjects/Bot/Camada de dados.h
+
+/home/joao/CLionProjects/Bot/logica pograma.c
+logica pograma.h
+/home/joao/CLionProjects/Bot/logica pograma.h
+
+/home/joao/CLionProjects/Bot/logica pograma.h
+Camada de dados.h
+/home/joao/CLionProjects/Bot/Camada de dados.h
+Listas.h
+/home/joao/CLionProjects/Bot/Listas.h
+
+/home/joao/CLionProjects/Bot/main.c
+stdio.h
+-
+Camada de dados.h
+/home/joao/CLionProjects/Bot/Camada de dados.h
+Listas.h
+/home/joao/CLionProjects/Bot/Listas.h
+stdlib.h
+-
+logica pograma.h
+/home/joao/CLionProjects/Bot/logica pograma.h
+

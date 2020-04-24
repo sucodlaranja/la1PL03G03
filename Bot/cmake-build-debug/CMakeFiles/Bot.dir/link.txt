@@ -1,0 +1,1 @@
+/usr/bin/cc -g   CMakeFiles/Bot.dir/main.c.o CMakeFiles/Bot.dir/Camada_de_dados.c.o CMakeFiles/Bot.dir/Listas.c.o CMakeFiles/Bot.dir/logica_pograma.c.o  -o Bot 
