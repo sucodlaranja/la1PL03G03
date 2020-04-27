@@ -16,8 +16,8 @@ ESTADO *inicializar_estado() {
         for (coluna = 0; coluna < 8; coluna++) {
             if (linha == 4 && coluna == 4) e->tab[coluna][linha] = BRANCA;
             else if (linha == 0 && coluna == 0) e->tab[coluna][linha] = UM;
-                else if (linha == 7 && coluna == 7) e->tab[coluna][linha] = DOIS;
-                    else e->tab[coluna][linha] = VAZIO;
+            else if (linha == 7 && coluna == 7) e->tab[coluna][linha] = DOIS;
+            else e->tab[coluna][linha] = VAZIO;
         }
     }
 

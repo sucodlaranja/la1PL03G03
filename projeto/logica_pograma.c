@@ -8,7 +8,6 @@
 int jogar (ESTADO *e, COORDENADA c) {
     if (((c.coluna == e->ultima_jogada.coluna) || (c.coluna - 1 == e->ultima_jogada.coluna) || (c.coluna + 1 == e->ultima_jogada.coluna)) && ((e->tab[c.coluna][c.linha] == VAZIO) || (e->tab[c.coluna][c.linha] == DOIS) || (e->tab[c.coluna][c.linha] == UM))) {
         if ((c.linha == e->ultima_jogada.linha) || (c.linha - 1 == e->ultima_jogada.linha) || (c.linha + 1 == e->ultima_jogada.linha)){
-            printf("a jogar %c%d\n", c.coluna +'a', c.linha + 1);
             return 1;
         }
         else {
@@ -42,7 +41,7 @@ void atualizador(ESTADO *e,COORDENADA coord) {
     e->tab[e->ultima_jogada.coluna][e->ultima_jogada.linha] = BRANCA;
 }
 
-
+//funcao pos
 void posicoes(ESTADO *e,int num) {
     int linha, coluna;
     if (num == 0) {
@@ -91,7 +90,7 @@ void posicoes(ESTADO *e,int num) {
 }
 
 
-void array(ESTADO *e,int count,char *lin,char *col) {
+void array(ESTADO *e,int count,const char *lin,const char *col) {
     if (obter_jogador_atual(count) == 1) {
         e->jogadas[e->num_jogadas].jogador1.linha = *lin - '1';
         e->jogadas[e->num_jogadas].jogador1.coluna = *col - 'a';
@@ -101,6 +100,7 @@ void array(ESTADO *e,int count,char *lin,char *col) {
         }
 }
 
+//cria as posicoes possiveis
 LISTA criadordeposicoes(ESTADO *e) {
     int x,y;
     LISTA posicoes = criar_lista();

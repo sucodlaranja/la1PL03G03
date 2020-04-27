@@ -182,7 +182,7 @@ int num;
             int colu=0,linh=7;
             char h;
             fout = fopen(nome,"r");
-            if (fopen == NULL) {
+            if (fout == NULL) {
                 printf("este ficheiro não existe\n");
                 return (-1);
             }
@@ -209,14 +209,14 @@ int num;
                    e->jogadas[n].jogador2.linha = j2l;
                    e->jogadas[n].jogador2.coluna = j2c- 'a';
                    n++;
-               }
+                }
                else if (sscanf(line,"%c%d ",&j1c,&j1l) == 2) {
                    e->jogadas[n].jogador1.coluna = j1c-'a';
                    e->jogadas[n].jogador1.linha = j1l;
                    contador++;
-                }
+               }
            }
-           e->num_jogadas=n;
+           e->num_jogadas = n;
            if(contador == 1) {
                e->ultima_jogada.coluna = j1c - 'a';
                e->ultima_jogada.linha = j1l;
@@ -250,9 +250,17 @@ int num;
 
 
     else {
+
         atualizador(e,coord);
 
+        //testa se nao ha mais jogadas possiveis
+        LISTA teste = criadordeposicoes(e);
+        if(teste == NULL) {
+            printf("venceu o jogador %d",obter_jogador_atual(count));
+            exit(-1);
+        }
 
+        //da o jogador
        if (obter_jogador_atual(count) == 2)  {
            num_jogadas(e);
        }

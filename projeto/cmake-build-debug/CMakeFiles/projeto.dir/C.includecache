@@ -6,3 +6,29 @@
 
 #IncludeRegexTransform: 
 
+/home/joao/Transferências/la1PL03G03-master/projeto/camada_dados.h
+
+/home/joao/Transferências/la1PL03G03-master/projeto/interface.c
+camada_dados.h
+/home/joao/Transferências/la1PL03G03-master/projeto/camada_dados.h
+logica_pograma.h
+/home/joao/Transferências/la1PL03G03-master/projeto/logica_pograma.h
+lista.h
+/home/joao/Transferências/la1PL03G03-master/projeto/lista.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/home/joao/Transferências/la1PL03G03-master/projeto/lista.h
+camada_dados.h
+/home/joao/Transferências/la1PL03G03-master/projeto/camada_dados.h
+
+/home/joao/Transferências/la1PL03G03-master/projeto/logica_pograma.h
+camada_dados.h
+/home/joao/Transferências/la1PL03G03-master/projeto/camada_dados.h
+lista.h
+/home/joao/Transferências/la1PL03G03-master/projeto/lista.h
+
