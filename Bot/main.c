@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
 
 
   FILE *file = fopen(argv[0], "r");
-    if (&fopen == NULL) {
+    if (file == NULL) {
         inicializar_estado(e);
     }
     else {
