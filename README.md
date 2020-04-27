@@ -1,4 +1,5 @@
 # projeto-la
+LCC
 Trabalho realizado no ambito da cadeira de laboratorios de algoritmia
 grupo 03 PL3
 A91669 João André Monteiro Martins
