@@ -1,25 +1,30 @@
-1- Camada_dados
+1 - Camada_dados
 
- 1.1 - inicializador_estado (linha 3) funcão que inicia o estado.
-1.2 - obter_jogador_atual (linha 36) funcão que calcula o jogador atual.
+1.1 - inicializador_estado (linha 3) Funcão que inicia o estado.
+1.2 - obter_jogador_atual (linha 36) Funcão que calcula o jogador atual.
 
-2 - logica_pograma
 
-2.1 - jogar (linha 8) funcao que testa se a jogada e valida.
-2.2 - num_jogadas (linha 25) calcula o numero de jogadas.
-2.3 - atualizador (linha 32) atualiza o tab do estado pra depois ser imprime no ecra pela funcao mostrar_tabuleiro
-2.4 - posicoes (linha 45) faz o jogo voltar a posicao escolhi pelo jogador.
-2.5 - array (linha 93) atualiza o array das jogadas.
-2.6 - criadordeposicoes (linha 104) analisa e coloca numa lista as jogadas possiveis
+2 - Logica_pograma
 
-3 - lista
-3.1 - criar_lista (linha 5) cria uma lista
-3.2 - insere_cabeca (linha 12) coloca um valor na lista
-3.3 - devolve_cabeca (linha 22) devolve apenas a cabeca da lista.
-3.4 - proximo (linha 27) passa de L para L->Prox.
-3.5 - remove_cabeca (linha 33) remove a cabeca da lista.
-3.6 - lista_esta_vazia (linha 39) analisa se a lista esta vazia.
+2.1 - jogar (linha 8) Funcao que testa se a jogada e valida.
+2.2 - num_jogadas (linha 25) Calcula o numero de jogadas.
+2.3 - atualizador (linha 32) Atualiza o tab do estado pra depois ser imprime no ecra pela funcao mostrar_tabuleiro
+2.4 - posicoes (linha 45) Faz o jogo voltar a posicao escolhi pelo jogador.
+2.5 - array (linha 93) Atualiza o array das jogadas.
+2.6 - criadordeposicoes (linha 104) Analisa e coloca numa lista as jogadas possiveis
 
-4 - interface
-4.1 mostrar_tabuleiro (linha 7) imprime no ecra o tabuleiro.
-4.2 interface (linha 31) analisa todos os comandos dado pelo jogador acessando a logica_pograma.
+
+3 - Lista
+
+3.1 - criar_lista (linha 5) Cria uma lista
+3.2 - insere_cabeca (linha 12) Coloca um valor na lista
+3.3 - devolve_cabeca (linha 22) Devolve apenas a cabeca da lista.
+3.4 - proximo (linha 27) Passa de L para L->Prox.
+3.5 - remove_cabeca (linha 33) Remove a cabeca da lista.
+3.6 - lista_esta_vazia (linha 39) Analisa se a lista esta vazia.
+
+
+4 - Interface
+
+4.1 - mostrar_tabuleiro (linha 7) Imprime no ecra o tabuleiro.
+4.2 - interface (linha 31) Analisa todos os comandos dado pelo jogador acessando a logica_pograma.
