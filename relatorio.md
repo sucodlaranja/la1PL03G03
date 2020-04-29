@@ -36,3 +36,9 @@ Figura 9 - Comando jog a executar uma jogada pelo jogador.
 
 ![](Imagens/figura10.png)
 
+Figura 10 - Comando jog2 a executar uma jogada alternativa a jog pelo jogador 
+
+![](Imagens/figura11.png)
+
+
+
