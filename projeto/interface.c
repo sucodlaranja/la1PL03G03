@@ -40,8 +40,8 @@ int num;
 
     while (z == 0) {
         printf("#%d PL%d %c%c ->", (e->num_jogadas + 1), obter_jogador_atual(count), e->ultima_jogada.coluna + 'a',e->ultima_jogada.linha + '1');
-        fgets(linha, BUF_SIZE, stdin);
-        if (strcmp(linha, "Q\n") == 0) {
+        if(fgets(linha, BUF_SIZE, stdin) ==NULL) return  0;
+        else if (strcmp(linha, "Q\n") == 0) {
             printf("jogo terminado\n");
             exit(-1);
         }
@@ -267,5 +267,6 @@ int num;
 
     mostrar_tabuleiro(*e);
        count++;
+       return 0;
     }
 }

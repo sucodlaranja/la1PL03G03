@@ -78,9 +78,9 @@ void posicoes(ESTADO *e,int num) {
 
 
 
-    int h = num;
+    int h;
     //inicializa novamente o array
-    for(h;h < e->num_jogadas;h++) {
+    for(h=num;h < e->num_jogadas;h++) {
         e->jogadas[h].jogador1.linha = 0;
         e->jogadas[h].jogador1.coluna = 0;
         e->jogadas[h].jogador2.linha = 0;

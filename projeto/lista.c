@@ -19,11 +19,6 @@ LISTA insere_cabeca(LISTA L, COORDENADA valor) {
 }
 
 
-void *devolve_cabeca(LISTA L){
-    L->prox=NULL;
-}
-
-
 LISTA proximo(LISTA L) {
     LISTA x = L == NULL ? NULL : L->prox;
     return x;
