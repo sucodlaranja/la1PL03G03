@@ -41,11 +41,14 @@ int num;
     while (z == 0) {
         printf("#%d PL%d %c%c ->", (e->num_jogadas + 1), obter_jogador_atual(count), e->ultima_jogada.coluna + 'a',e->ultima_jogada.linha + '1');
         if(fgets(linha, BUF_SIZE, stdin) ==NULL) return  0;
+        
+        //comando exit
         else if (strcmp(linha, "Q\n") == 0) {
             printf("jogo terminado\n");
             exit(-1);
         }
 
+        //comando jog primeira heuristia
         else if (strcmp(linha, "jog\n") == 0) {
             LISTA  posicoes = criadordeposicoes(e);
             //euclina
@@ -74,6 +77,8 @@ int num;
             z = jogar(e,coord);
 
         }
+        
+        //comando jog2 segunda heuristia
         else if (strcmp(linha, "jog2\n") == 0) {
             LISTA pos = criadordeposicoes(e);
             LISTA temp = criar_lista();
@@ -96,6 +101,8 @@ int num;
             z = jogar(e,coord);
 
         }
+        
+        //comando pos que volta a uma posicao jogada
         else if ((strlen(linha) == 6 || strlen(linha) == 7) && sscanf(linha,"pos %d",&num) == 1 && num>0 && num < e->num_jogadas) {
             posicoes(e,num);
             mostrar_tabuleiro(*e);
@@ -136,6 +143,8 @@ int num;
 
 
         //files
+        
+        //comando que grava um ficheiro
         else if (sscanf(linha,"gravar %s",nome) == 1 ) {
             FILE *fout;
             int c,l;
@@ -176,7 +185,7 @@ int num;
              }
 
 
-
+        //comando que le um ficheiro
         else if (sscanf(linha,"ler %s",nome) == 1 ) {
             FILE *fout;
             int colu=0,linh=7;
@@ -243,6 +252,8 @@ int num;
         exit(-1);
 
     }
+    
+    //jogador 1 chega a posicão
     else if (coord.linha == 0 && coord.coluna == 0 && obter_jogador_atual(count) == 1) {
         printf("Parabens!, Jogador 1 ganhou o jogo");
         exit(-1);
@@ -260,7 +271,7 @@ int num;
             exit(-1);
         }
 
-        //da o jogador
+        //incrementa o numero de jogadas
        if (obter_jogador_atual(count) == 2)  {
            num_jogadas(e);
        }
