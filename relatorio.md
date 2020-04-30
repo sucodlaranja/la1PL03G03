@@ -24,11 +24,11 @@ Figura 6 - Comando Pos a funcionar com a segunda rodada do jogo.
 
 ![](Imagens/figura7.png)
 
-Figura 7 - Comando gravar a gravar a posição atual.
+Figura 7 - Comando gravar a gravar o estado num ficheiro txt.
 
 ![](Imagens/figura8.png)
 
-Figura 8 - Comando ler a ler a posição gravada na memoria anteriormente.
+Figura 8 - Comando ler a ler o estado num ficheiro txt previamente criado.
 
 ![](Imagens/figura9.png)
 
