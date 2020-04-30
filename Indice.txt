@@ -18,10 +18,9 @@
 
 3.1 - criar_lista (linha 5) Cria uma lista
 3.2 - insere_cabeca (linha 12) Coloca um valor na lista
-3.3 - devolve_cabeca (linha 22) Devolve apenas a cabeca da lista.
-3.4 - proximo (linha 27) Passa de L para L->Prox.
-3.5 - remove_cabeca (linha 33) Remove a cabeca da lista.
-3.6 - lista_esta_vazia (linha 39) Analisa se a lista esta vazia.
+3.3 - proximo (linha 22) Passa de L para L->Prox.
+3.4 - remove_cabeca (linha 28) Remove a cabeca da lista.
+3.5 - lista_esta_vazia (linha 34) Analisa se a lista esta vazia.
 
 
 4 - Interface
