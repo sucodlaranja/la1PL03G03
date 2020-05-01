@@ -85,18 +85,16 @@ int main(int argc, char **argv) {
                 coord.linha = L->valor->linha;
 
                 atualizador(e, coord);
-printf("%d\n",coord.coluna);
 
-        printf("%d\n",obter_jogador_atual(count));
+
+
         //se o bot for o segundo jogador incrementar o numero de jogadas
         array(e, count, coord.linha, coord.coluna);
-        printf("%c%d\n", e->jogadas[e->num_jogadas].jogador1.coluna + 'a', e->jogadas[e->num_jogadas].jogador1.linha);
         if (obter_jogador_atual(count) == 2) {
             num_jogadas(e);
         }
 
-        printf("%d",count);
-        printf("%d",e->num_jogadas);
+
         //gravar em jog02
         char tabuleiro[8][8];
         int c, l;
