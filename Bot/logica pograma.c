@@ -28,7 +28,6 @@ LISTA criadordeposicoes(ESTADO *e) {
                 valor.coluna = y;
                 valor.linha = x;
                 posicoes = insere_cabeca(posicoes,valor);
-                printf("%d%d\n",posicoes->valor->coluna,posicoes->valor->linha);
             }
         }
 
@@ -38,7 +37,7 @@ LISTA criadordeposicoes(ESTADO *e) {
 }
 
 //coloca no array de jogadas a respetiva jogada atual
-void array(ESTADO *e,int count,char *lin,char *col) {
+void array(ESTADO *e,int count,const char *lin,const char *col) {
     if (obter_jogador_atual(count) == 1) {
         e->jogadas[e->num_jogadas].jogador1.linha = *lin - '1';
         e->jogadas[e->num_jogadas].jogador1.coluna = *col - 'a';

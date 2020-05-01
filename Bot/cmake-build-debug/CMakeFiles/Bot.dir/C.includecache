@@ -6,43 +6,29 @@
 
 #IncludeRegexTransform: 
 
-/home/joao/CLionProjects/Bot/Camada de dados.c
+/home/joao/Transferências/la1PL03G03-master/Bot/Camada de dados.h
+
+/home/joao/Transferências/la1PL03G03-master/Bot/Listas.h
 Camada de dados.h
-/home/joao/CLionProjects/Bot/Camada de dados.h
-stdlib.h
--
+/home/joao/Transferências/la1PL03G03-master/Bot/Camada de dados.h
 
-/home/joao/CLionProjects/Bot/Camada de dados.h
-
-/home/joao/CLionProjects/Bot/Listas.c
-stdlib.h
--
+/home/joao/Transferências/la1PL03G03-master/Bot/logica pograma.h
+Camada de dados.h
+/home/joao/Transferências/la1PL03G03-master/Bot/Camada de dados.h
 Listas.h
-/home/joao/CLionProjects/Bot/Listas.h
+/home/joao/Transferências/la1PL03G03-master/Bot/Listas.h
 
-/home/joao/CLionProjects/Bot/Listas.h
-Camada de dados.h
-/home/joao/CLionProjects/Bot/Camada de dados.h
-
-/home/joao/CLionProjects/Bot/logica pograma.c
-logica pograma.h
-/home/joao/CLionProjects/Bot/logica pograma.h
-
-/home/joao/CLionProjects/Bot/logica pograma.h
-Camada de dados.h
-/home/joao/CLionProjects/Bot/Camada de dados.h
-Listas.h
-/home/joao/CLionProjects/Bot/Listas.h
-
-/home/joao/CLionProjects/Bot/main.c
+/home/joao/Transferências/la1PL03G03-master/Bot/main.c
 stdio.h
 -
 Camada de dados.h
-/home/joao/CLionProjects/Bot/Camada de dados.h
+/home/joao/Transferências/la1PL03G03-master/Bot/Camada de dados.h
 Listas.h
-/home/joao/CLionProjects/Bot/Listas.h
+/home/joao/Transferências/la1PL03G03-master/Bot/Listas.h
 stdlib.h
 -
+string.h
+-
 logica pograma.h
-/home/joao/CLionProjects/Bot/logica pograma.h
+/home/joao/Transferências/la1PL03G03-master/Bot/logica pograma.h
 

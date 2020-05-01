@@ -9,7 +9,7 @@
 LISTA criadordeposicoes(ESTADO *e);
 void atualizador(ESTADO *e,COORDENADA coord);
 int num_jogadas(ESTADO *e);
-void array(ESTADO *e,int count,char *lin,char *col);
+void array(ESTADO *e,int count,const char *lin,const char *col);
 #define BOT_LOGICA_POGRAMA_H
 
 #endif //BOT_LOGICA_POGRAMA_H

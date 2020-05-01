@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/joao/CLionProjects/Bot/Camada de dados.c" "/home/joao/CLionProjects/Bot/cmake-build-debug/CMakeFiles/Bot.dir/Camada_de_dados.c.o"
-  "/home/joao/CLionProjects/Bot/Listas.c" "/home/joao/CLionProjects/Bot/cmake-build-debug/CMakeFiles/Bot.dir/Listas.c.o"
-  "/home/joao/CLionProjects/Bot/logica pograma.c" "/home/joao/CLionProjects/Bot/cmake-build-debug/CMakeFiles/Bot.dir/logica_pograma.c.o"
-  "/home/joao/CLionProjects/Bot/main.c" "/home/joao/CLionProjects/Bot/cmake-build-debug/CMakeFiles/Bot.dir/main.c.o"
+  "/home/joao/Transferências/la1PL03G03-master/Bot/Camada de dados.c" "/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/CMakeFiles/Bot.dir/Camada_de_dados.c.o"
+  "/home/joao/Transferências/la1PL03G03-master/Bot/Listas.c" "/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/CMakeFiles/Bot.dir/Listas.c.o"
+  "/home/joao/Transferências/la1PL03G03-master/Bot/logica pograma.c" "/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/CMakeFiles/Bot.dir/logica_pograma.c.o"
+  "/home/joao/Transferências/la1PL03G03-master/Bot/main.c" "/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/CMakeFiles/Bot.dir/main.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

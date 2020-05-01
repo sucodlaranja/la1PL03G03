@@ -44,10 +44,10 @@ RM = /home/joao/Desktop/clion-2019.3.3/bin/cmake/linux/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/joao/CLionProjects/Bot
+CMAKE_SOURCE_DIR = /home/joao/Transferências/la1PL03G03-master/Bot
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/joao/CLionProjects/Bot/cmake-build-debug
+CMAKE_BINARY_DIR = /home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -74,14 +74,14 @@ clean: CMakeFiles/Bot.dir/clean
 CMakeFiles/Bot.dir/all:
 	$(MAKE) -f CMakeFiles/Bot.dir/build.make CMakeFiles/Bot.dir/depend
 	$(MAKE) -f CMakeFiles/Bot.dir/build.make CMakeFiles/Bot.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joao/CLionProjects/Bot/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target Bot"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target Bot"
 .PHONY : CMakeFiles/Bot.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Bot.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/CLionProjects/Bot/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Bot.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/CLionProjects/Bot/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Bot.dir/rule
 
 # Convenience name for target.

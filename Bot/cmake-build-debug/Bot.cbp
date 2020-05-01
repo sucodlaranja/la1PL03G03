@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/joao/CLionProjects/Bot/cmake-build-debug"/>
+				<Option working_dir="/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/joao/CLionProjects/Bot/cmake-build-debug"/>
+				<Option working_dir="/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/joao/CLionProjects/Bot/cmake-build-debug"/>
+				<Option working_dir="/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Bot">
-				<Option output="/home/joao/CLionProjects/Bot/cmake-build-debug/Bot" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/joao/CLionProjects/Bot/cmake-build-debug"/>
+				<Option output="/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Bot" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -51,15 +51,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 Bot"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 Bot"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Bot/fast">
-				<Option output="/home/joao/CLionProjects/Bot/cmake-build-debug/Bot" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/joao/CLionProjects/Bot/cmake-build-debug"/>
+				<Option output="/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Bot" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -71,35 +71,35 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 Bot/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/joao/CLionProjects/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 Bot/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/joao/Transferências/la1PL03G03-master/Bot/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/joao/CLionProjects/Bot/Camada de dados.c">
+		<Unit filename="/home/joao/Transferências/la1PL03G03-master/Bot/Camada de dados.c">
 			<Option target="Bot"/>
 		</Unit>
-		<Unit filename="/home/joao/CLionProjects/Bot/Camada de dados.h">
+		<Unit filename="/home/joao/Transferências/la1PL03G03-master/Bot/Camada de dados.h">
 			<Option target="Bot"/>
 		</Unit>
-		<Unit filename="/home/joao/CLionProjects/Bot/Listas.c">
+		<Unit filename="/home/joao/Transferências/la1PL03G03-master/Bot/Listas.c">
 			<Option target="Bot"/>
 		</Unit>
-		<Unit filename="/home/joao/CLionProjects/Bot/Listas.h">
+		<Unit filename="/home/joao/Transferências/la1PL03G03-master/Bot/Listas.h">
 			<Option target="Bot"/>
 		</Unit>
-		<Unit filename="/home/joao/CLionProjects/Bot/logica pograma.c">
+		<Unit filename="/home/joao/Transferências/la1PL03G03-master/Bot/logica pograma.c">
 			<Option target="Bot"/>
 		</Unit>
-		<Unit filename="/home/joao/CLionProjects/Bot/logica pograma.h">
+		<Unit filename="/home/joao/Transferências/la1PL03G03-master/Bot/logica pograma.h">
 			<Option target="Bot"/>
 		</Unit>
-		<Unit filename="/home/joao/CLionProjects/Bot/main.c">
+		<Unit filename="/home/joao/Transferências/la1PL03G03-master/Bot/main.c">
 			<Option target="Bot"/>
 		</Unit>
-		<Unit filename="/home/joao/CLionProjects/Bot/CMakeLists.txt">
+		<Unit filename="/home/joao/Transferências/la1PL03G03-master/Bot/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>
