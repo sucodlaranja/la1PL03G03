@@ -131,7 +131,7 @@ int num;
                 printf("%d: %c%c %c%c\n", k + 1, e->jogadas[k].jogador1.coluna + 'a', e->jogadas[k].jogador1.linha + '1',
                        e->jogadas[k].jogador2.coluna + 'a', e->jogadas[k].jogador2.linha + '1');
             }
-            if (e->jogadas[e->num_jogadas].jogador1.linha != 0 && e->jogadas[e->num_jogadas].jogador1.coluna != 0) {
+            if (e->jogadas[e->num_jogadas].jogador1.linha != -1 && e->jogadas[e->num_jogadas].jogador1.coluna != -1) {
                 printf("%d: %c%c\n", e->num_jogadas + 1, e->jogadas[e->num_jogadas].jogador1.coluna + 'a',
                        e->jogadas[e->num_jogadas].jogador1.linha + '1');
             }
@@ -177,7 +177,7 @@ int num;
             for(int k=0;k<e->num_jogadas;k++) {
                 fprintf(fout,"%c%d %c%d\n",e->jogadas[k].jogador1.coluna + 'a',e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna +'a',e->jogadas[k].jogador2.linha);
             }
-            if(e->jogadas[e->num_jogadas].jogador1.linha !=0 && e->jogadas[e->num_jogadas].jogador1.coluna !=0) {
+            if(e->jogadas[e->num_jogadas].jogador1.linha !=-1 && e->jogadas[e->num_jogadas].jogador1.coluna !=-1) {
                 fprintf(fout,"%c%d\n",e->jogadas[e->num_jogadas].jogador1.coluna + 'a',e->jogadas[e->num_jogadas].jogador1.linha);
             }
 
