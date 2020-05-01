@@ -10,8 +10,6 @@ int main(int argc, char **argv) {
     ESTADO *e = inicializar_estado();
     int coluna = 0, linha = 7, count;
     char h;
-    char col[2], lin[2];
-
     char segundo[BUF_SIZE] = "segundo";
     strcpy(segundo,argv[2]);
     if (argc == 3) {
@@ -61,7 +59,6 @@ int main(int argc, char **argv) {
         }
         count = contador;
         fclose(file);
-
         //heuristia
         LISTA L;
                 L = criadordeposicoes(e);
@@ -82,21 +79,22 @@ int main(int argc, char **argv) {
                     }
                 }
 
-                *col = L->valor->coluna;
-                *lin = L->valor->linha;
+
                 coord.coluna = L->valor->coluna;
                 coord.linha = L->valor->linha;
+
                 atualizador(e, coord);
-
-
-
+printf("%d\n",coord.coluna);
 
         //se o bot for o segundo jogador incrementar o numero de jogadas
+        array(e, count, coord.linha, coord.coluna);
+        printf("%c%d\n", e->jogadas[e->num_jogadas].jogador1.coluna + 'a', e->jogadas[e->num_jogadas].jogador1.linha);
         if (obter_jogador_atual(count) == 2) {
             num_jogadas(e);
         }
-        array(e, count, lin, col);
 
+        printf("%d",count);
+        printf("%d",e->num_jogadas);
         //gravar em jog02
         char tabuleiro[8][8];
         int c, l;

@@ -37,13 +37,13 @@ LISTA criadordeposicoes(ESTADO *e) {
 }
 
 //coloca no array de jogadas a respetiva jogada atual
-void array(ESTADO *e,int count,const char *lin,const char *col) {
+void array(ESTADO *e,int count,int lin,int col) {
     if (obter_jogador_atual(count) == 1) {
-        e->jogadas[e->num_jogadas].jogador1.linha = *lin - '1';
-        e->jogadas[e->num_jogadas].jogador1.coluna = *col - 'a';
+        e->jogadas[e->num_jogadas].jogador1.linha = lin;
+        e->jogadas[e->num_jogadas].jogador1.coluna = col;
     } else {
-        e->jogadas[e->num_jogadas].jogador2.linha = *lin - '1';
-        e->jogadas[e->num_jogadas].jogador2.coluna = *col - 'a';
+        e->jogadas[e->num_jogadas].jogador2.linha = lin;
+        e->jogadas[e->num_jogadas].jogador2.coluna = col;
     }
 }
 
