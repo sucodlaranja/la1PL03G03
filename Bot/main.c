@@ -53,6 +53,7 @@ int main(int argc, char **argv) {
         else if (contador%2 == 1) {
             e->ultima_jogada.coluna = j1c - 'a';
             e->ultima_jogada.linha = j1l;
+
         } else if (contador%2 == 0) {
             e->ultima_jogada.coluna = j2c - 'a';
             e->ultima_jogada.linha = j2l;
@@ -86,6 +87,7 @@ int main(int argc, char **argv) {
                 atualizador(e, coord);
 printf("%d\n",coord.coluna);
 
+        printf("%d\n",obter_jogador_atual(count));
         //se o bot for o segundo jogador incrementar o numero de jogadas
         array(e, count, coord.linha, coord.coluna);
         printf("%c%d\n", e->jogadas[e->num_jogadas].jogador1.coluna + 'a', e->jogadas[e->num_jogadas].jogador1.linha);
@@ -127,7 +129,7 @@ printf("%d\n",coord.coluna);
         for (int k = 0; k < e->num_jogadas; k++) {
             fprintf(file2,"%c%d %c%d\n", e->jogadas[k].jogador1.coluna + 'a', e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna + 'a', e->jogadas[k].jogador2.linha);
         }
-        if (e->jogadas[e->num_jogadas].jogador1.linha != 0 && e->jogadas[e->num_jogadas].jogador1.coluna != 0) {
+        if (e->jogadas[e->num_jogadas].jogador1.linha != -1 && e->jogadas[e->num_jogadas].jogador1.coluna != -1) {
             fprintf(file2,"%c%d\n", e->jogadas[e->num_jogadas].jogador1.coluna + 'a', e->jogadas[e->num_jogadas].jogador1.linha);
         }
 
