@@ -1,6 +1,11 @@
 
 #ifndef PROJETO_CAMADA_DADOS_H
 #define BUF_SIZE 1024
+/**
+ * @file ficheiros que tem todos os dados do estado do jogo
+ */
+
+/** estrutura do estado do jogo */
 typedef enum {VAZIO, BRANCA, PRETA,UM,DOIS} CASA;
 typedef struct {
     int coluna;
@@ -19,7 +24,10 @@ typedef struct {
     int jogador_atual;
 } ESTADO;
 
+ /** funcao que obtem o jogador atual */
 int obter_jogador_atual(int e);
+
+/** funcao que inicializa a estrutura do estado */
 ESTADO *inicializar_estado();
 #define PROJETO_CAMADA_DADOS_H
 

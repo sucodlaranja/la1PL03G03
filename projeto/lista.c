@@ -1,7 +1,5 @@
 #include <stdlib.h>
 #include "lista.h"
-
-//funciona
 LISTA criar_lista() {
     LISTA L = malloc(sizeof(NODO));
     L->valor = malloc(sizeof(COORDENADA));
