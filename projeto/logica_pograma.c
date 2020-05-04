@@ -113,7 +113,6 @@ LISTA criadordeposicoes(ESTADO *e) {
                 valor.coluna = y;
                 valor.linha = x;
                 posicoes = insere_cabeca(posicoes,valor);
-                printf("%d%d\n",posicoes->valor->coluna,posicoes->valor->linha);
             }
         }
 
