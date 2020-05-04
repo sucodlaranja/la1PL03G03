@@ -5,17 +5,30 @@
  * @file ficheiros que tem todos os dados do estado do jogo
  */
 
-/** estrutura do estado do jogo */
+/** 
+\brief estrutura que nos da o estado do tabuleiro 
+*/
 typedef enum {VAZIO, BRANCA, PRETA,UM,DOIS} CASA;
+
+/** 
+\brief estrutura da COORDENADA que nos da um int coluna e um linha  
+*/
 typedef struct {
     int coluna;
     int linha;
 } COORDENADA;
+/** 
+\brief estrutura que nos as jogadas 
+*/
 typedef struct {
     COORDENADA jogador1;
     COORDENADA jogador2;
 } JOGADA;
+
 typedef JOGADA JOGADAS[32];
+/** 
+\brief estrutura que nos da o estado do jogo
+*/
 typedef struct {
     CASA tab[8][8];
     COORDENADA ultima_jogada;
