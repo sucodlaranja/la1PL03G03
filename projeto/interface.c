@@ -213,26 +213,26 @@ int num;
            char line[BUF_SIZE],j1c,j2c;
            while (fgets(line,BUF_SIZE,fout) != NULL) {
                if (sscanf(line,"%c%d %c%d",&j1c,&j1l,&j2c,&j2l) == 4) {
-                   e->jogadas[n].jogador1.coluna = j1c-'a';
-                   e->jogadas[n].jogador1.linha = j1l;
-                   e->jogadas[n].jogador2.linha = j2l;
-                   e->jogadas[n].jogador2.coluna = j2c- 'a';
+                   e->jogadas[n].jogador1.coluna = j1c - 'a';
+                   e->jogadas[n].jogador1.linha = j1l - 1;
+                   e->jogadas[n].jogador2.linha = j2l - 1;
+                   e->jogadas[n].jogador2.coluna = j2c - 'a';
                    n++;
                 }
                else if (sscanf(line,"%c%d ",&j1c,&j1l) == 2) {
-                   e->jogadas[n].jogador1.coluna = j1c-'a';
-                   e->jogadas[n].jogador1.linha = j1l;
+                   e->jogadas[n].jogador1.coluna = j1c- 'a';
+                   e->jogadas[n].jogador1.linha = j1l- 1;
                    contador++;
                }
            }
            e->num_jogadas = n;
            if(contador == 1) {
                e->ultima_jogada.coluna = j1c - 'a';
-               e->ultima_jogada.linha = j1l;
+               e->ultima_jogada.linha = j1l - 1;
            }
            else {
                e->ultima_jogada.coluna = j2c - 'a';
-               e->ultima_jogada.linha = j2l;
+               e->ultima_jogada.linha = j2l -1;
            }
            count=contador;
             fclose(fout);
@@ -267,7 +267,7 @@ int num;
         //testa se nao ha mais jogadas possiveis
         LISTA teste = criadordeposicoes(e);
         if(teste == NULL) {
-            printf("venceu o jogador %d",obter_jogador_atual(count));
+            printf("venceu o jogador %d\n",obter_jogador_atual(count));
             exit(-1);
         }
 
