@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.18">
+  <compound refid="struct_c_o_o_r_d_e_n_a_d_a" kind="struct"><name>COORDENADA</name>
+    <member refid="struct_c_o_o_r_d_e_n_a_d_a_1adfbc8d4856ce807139fdf62e00aed29a" kind="variable"><name>coluna</name></member>
+    <member refid="struct_c_o_o_r_d_e_n_a_d_a_1aefe14bcc5a066ac3b21500cc3d28c06f" kind="variable"><name>linha</name></member>
+  </compound>
+  <compound refid="struct_e_s_t_a_d_o" kind="struct"><name>ESTADO</name>
+    <member refid="struct_e_s_t_a_d_o_1ab56f0f1be16954d3768b4174d14c087d" kind="variable"><name>tab</name></member>
+    <member refid="struct_e_s_t_a_d_o_1a4896a5c5c1f40b43fb795623327e3f47" kind="variable"><name>ultima_jogada</name></member>
+    <member refid="struct_e_s_t_a_d_o_1afae43b87a488fad0f2b56a18bad31d18" kind="variable"><name>jogadas</name></member>
+    <member refid="struct_e_s_t_a_d_o_1a261495728744647e618b4e623f5a4b7a" kind="variable"><name>num_jogadas</name></member>
+    <member refid="struct_e_s_t_a_d_o_1a5dd28e2e68b7aef2b6b7ea88e02eff58" kind="variable"><name>jogador_atual</name></member>
+  </compound>
+  <compound refid="struct_j_o_g_a_d_a" kind="struct"><name>JOGADA</name>
+    <member refid="struct_j_o_g_a_d_a_1a93d9306cb0c49b66b7d9a615bffe0149" kind="variable"><name>jogador1</name></member>
+    <member refid="struct_j_o_g_a_d_a_1ab46b16dfbdc7f2af9430c8dcdac0914b" kind="variable"><name>jogador2</name></member>
+  </compound>
+  <compound refid="structnodo" kind="struct"><name>nodo</name>
+    <member refid="structnodo_1a6be2ffb2aab6d0b8dae5ee3dbf211247" kind="variable"><name>valor</name></member>
+    <member refid="structnodo_1a086547621a7da23b916bbe26e0855308" kind="variable"><name>prox</name></member>
+  </compound>
+  <compound refid="camada__dados_8c" kind="file"><name>camada_dados.c</name>
+    <member refid="camada__dados_8c_1a7e0c7e26fb685d9ab501e19b05e6954f" kind="function"><name>inicializar_estado</name></member>
+    <member refid="camada__dados_8c_1abdb69f88313ca8774a3972dc4e7a9c49" kind="function"><name>obter_jogador_atual</name></member>
+  </compound>
+  <compound refid="camada__dados_8h" kind="file"><name>camada_dados.h</name>
+    <member refid="camada__dados_8h_1a6821bafc3c88dfb2e433a095df9940c6" kind="define"><name>BUF_SIZE</name></member>
+    <member refid="camada__dados_8h_1a71050f02348f35a4b97ef980abf9a4ce" kind="define"><name>PROJETO_CAMADA_DADOS_H</name></member>
+    <member refid="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039" kind="enum"><name>CASA</name></member>
+    <member refid="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039abc711f491a56ec7af7a688be508c5113" kind="enumvalue"><name>VAZIO</name></member>
+    <member refid="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039ad24485fddec75419fd4a0cc9edda0ca5" kind="enumvalue"><name>BRANCA</name></member>
+    <member refid="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039a007278eb3827d19891b47cdd3ac8846d" kind="enumvalue"><name>PRETA</name></member>
+    <member refid="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039ab620e38b0268bee43c7e9a88bd6e73fa" kind="enumvalue"><name>UM</name></member>
+    <member refid="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039a2bf153109d0c8b96e61bc18d5be7c5da" kind="enumvalue"><name>DOIS</name></member>
+    <member refid="camada__dados_8h_1a94c221d29a1760f008b7834093259b7d" kind="typedef"><name>JOGADAS</name></member>
+    <member refid="camada__dados_8h_1abdb69f88313ca8774a3972dc4e7a9c49" kind="function"><name>obter_jogador_atual</name></member>
+    <member refid="camada__dados_8h_1a7e0c7e26fb685d9ab501e19b05e6954f" kind="function"><name>inicializar_estado</name></member>
+  </compound>
+  <compound refid="_c_make_lists_8txt" kind="file"><name>CMakeLists.txt</name>
+  </compound>
+  <compound refid="interface_8c" kind="file"><name>interface.c</name>
+    <member refid="interface_8c_1a85f7f36b715982954cde07c637d038ee" kind="function"><name>mostrar_tabuleiro</name></member>
+    <member refid="interface_8c_1a24da95ebeede4a540e37790ce8be359b" kind="function"><name>interpretador</name></member>
+  </compound>
+  <compound refid="interface_8h" kind="file"><name>interface.h</name>
+    <member refid="interface_8h_1a5058680af923174fa3f2dd72764b7f3c" kind="define"><name>PROJETO_INTERFACE_H</name></member>
+    <member refid="interface_8h_1a85f7f36b715982954cde07c637d038ee" kind="function"><name>mostrar_tabuleiro</name></member>
+    <member refid="interface_8h_1a24da95ebeede4a540e37790ce8be359b" kind="function"><name>interpretador</name></member>
+  </compound>
+  <compound refid="lista_8c" kind="file"><name>lista.c</name>
+    <member refid="lista_8c_1ae3b99323b6f8f35d80bb69ff1a27985e" kind="function"><name>criar_lista</name></member>
+    <member refid="lista_8c_1a85fdf791277366a757df573bbd006f3f" kind="function"><name>insere_cabeca</name></member>
+    <member refid="lista_8c_1ad9380152361127432c55c1c6067e05ae" kind="function"><name>proximo</name></member>
+    <member refid="lista_8c_1a9026a681a68322b5ec7f07137b864cbd" kind="function"><name>remove_cabeca</name></member>
+    <member refid="lista_8c_1a4c10928f7acaa4e3de3760cea0dfd9c0" kind="function"><name>lista_esta_vazia</name></member>
+  </compound>
+  <compound refid="lista_8h" kind="file"><name>lista.h</name>
+    <member refid="lista_8h_1ab352ead3fb06267f3afdd032d67c189c" kind="typedef"><name>NODO</name></member>
+    <member refid="lista_8h_1a2ed03b19209dd10718380b31b09a69f5" kind="typedef"><name>LISTA</name></member>
+    <member refid="lista_8h_1ae3b99323b6f8f35d80bb69ff1a27985e" kind="function"><name>criar_lista</name></member>
+    <member refid="lista_8h_1a85fdf791277366a757df573bbd006f3f" kind="function"><name>insere_cabeca</name></member>
+    <member refid="lista_8h_1ad9380152361127432c55c1c6067e05ae" kind="function"><name>proximo</name></member>
+    <member refid="lista_8h_1a9026a681a68322b5ec7f07137b864cbd" kind="function"><name>remove_cabeca</name></member>
+    <member refid="lista_8h_1a4c10928f7acaa4e3de3760cea0dfd9c0" kind="function"><name>lista_esta_vazia</name></member>
+  </compound>
+  <compound refid="logica__pograma_8c" kind="file"><name>logica_pograma.c</name>
+    <member refid="logica__pograma_8c_1ac313d7e553b1e2b5f266acb9bfff8141" kind="function"><name>jogar</name></member>
+    <member refid="logica__pograma_8c_1acb1bb281f07fd2dbdb4dc94a252eadbb" kind="function"><name>num_jogadas</name></member>
+    <member refid="logica__pograma_8c_1a245ab07ce2e8f26eb52907988d798e0b" kind="function"><name>atualizador</name></member>
+    <member refid="logica__pograma_8c_1ad72f00fa99910c9bfa17fc8029e3573e" kind="function"><name>posicoes</name></member>
+    <member refid="logica__pograma_8c_1a1c615e09ff24cdf876c067788f8ec492" kind="function"><name>array</name></member>
+    <member refid="logica__pograma_8c_1a7b4774cb750065c89181490ef549d812" kind="function"><name>criadordeposicoes</name></member>
+  </compound>
+  <compound refid="logica__pograma_8h" kind="file"><name>logica_pograma.h</name>
+    <member refid="logica__pograma_8h_1ac8e0d4fce89860ec57b4bfecf4f71e7f" kind="define"><name>PROJETO_LOGICA_POGRAMA_H</name></member>
+    <member refid="logica__pograma_8h_1ac313d7e553b1e2b5f266acb9bfff8141" kind="function"><name>jogar</name></member>
+    <member refid="logica__pograma_8h_1acb1bb281f07fd2dbdb4dc94a252eadbb" kind="function"><name>num_jogadas</name></member>
+    <member refid="logica__pograma_8h_1a245ab07ce2e8f26eb52907988d798e0b" kind="function"><name>atualizador</name></member>
+    <member refid="logica__pograma_8h_1a7b4774cb750065c89181490ef549d812" kind="function"><name>criadordeposicoes</name></member>
+    <member refid="logica__pograma_8h_1ad72f00fa99910c9bfa17fc8029e3573e" kind="function"><name>posicoes</name></member>
+    <member refid="logica__pograma_8h_1a1c615e09ff24cdf876c067788f8ec492" kind="function"><name>array</name></member>
+  </compound>
+  <compound refid="main_8c" kind="file"><name>main.c</name>
+    <member refid="main_8c_1ae66f6b31b5ad750f1fe042a706a4e3d4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_t1_8txt" kind="file"><name>T1.txt</name>
+  </compound>
+  <compound refid="_t2_8txt" kind="file"><name>T2.txt</name>
+  </compound>
+  <compound refid="_t3_8txt" kind="file"><name>T3.txt</name>
+  </compound>
+  <compound refid="_t4_8txt" kind="file"><name>T4.txt</name>
+  </compound>
+  <compound refid="dir_8b623e05dfd76e734aa6d4ccb8428dac" kind="dir"><name>C:/Users/joaom/Downloads/la1PL03G03-master</name>
+  </compound>
+  <compound refid="dir_2c348645b87513102f0c8054ef1d807b" kind="dir"><name>C:/Users/joaom/Downloads/la1PL03G03-master/projeto</name>
+  </compound>
+</doxygenindex>

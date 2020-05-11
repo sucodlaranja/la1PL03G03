@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="_t3_8txt" kind="file" language="C++">
+    <compoundname>T3.txt</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal">.###.#.2</highlight></codeline>
+<codeline lineno="2"><highlight class="normal">##.####.</highlight></codeline>
+<codeline lineno="3"><highlight class="normal">###*####</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">.#..###.</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">........</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">........</highlight></codeline>
+<codeline lineno="7"><highlight class="normal">........</highlight></codeline>
+<codeline lineno="8"><highlight class="normal">1.......</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">f5<sp/>g5</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">g6<sp/>h6</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">g7<sp/>f6</highlight></codeline>
+<codeline lineno="13"><highlight class="normal">e6<sp/>f7</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">f8<sp/>e7</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">d8<sp/>d7</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">c8<sp/>b8</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">b7<sp/>b6</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">a7<sp/>a6</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">b5<sp/>c6</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">d6</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/T3.txt"/>
+  </compounddef>
+</doxygen>

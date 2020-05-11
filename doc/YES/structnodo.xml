@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="structnodo" kind="struct" language="C++" prot="public">
+    <compoundname>nodo</compoundname>
+    <includes refid="lista_8h" local="no">lista.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structnodo_1a6be2ffb2aab6d0b8dae5ee3dbf211247" prot="public" static="no" mutable="no">
+        <type><ref refid="struct_c_o_o_r_d_e_n_a_d_a" kindref="compound">COORDENADA</ref> *</type>
+        <definition>COORDENADA* nodo::valor</definition>
+        <argsstring></argsstring>
+        <name>valor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/lista.h" line="17" column="16" bodyfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/lista.h" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structnodo_1a086547621a7da23b916bbe26e0855308" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structnodo" kindref="compound">nodo</ref> *</type>
+        <definition>struct nodo* nodo::prox</definition>
+        <argsstring></argsstring>
+        <name>prox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/lista.h" line="18" column="14" bodyfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/lista.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>estrutura das listas </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>nodo</label>
+        <link refid="structnodo"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>valor</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>prox</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>COORDENADA</label>
+        <link refid="struct_c_o_o_r_d_e_n_a_d_a"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/lista.h" line="16" column="1" bodyfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/lista.h" bodystart="16" bodyend="19"/>
+    <listofallmembers>
+      <member refid="structnodo_1a086547621a7da23b916bbe26e0855308" prot="public" virt="non-virtual"><scope>nodo</scope><name>prox</name></member>
+      <member refid="structnodo_1a6be2ffb2aab6d0b8dae5ee3dbf211247" prot="public" virt="non-virtual"><scope>nodo</scope><name>valor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

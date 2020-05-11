@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.18">
+  <compounddef id="camada__dados_8h" kind="file" language="C++">
+    <compoundname>camada_dados.h</compoundname>
+    <includedby refid="logica__pograma_8h" local="yes">C:/Users/joaom/Downloads/la1PL03G03-master/projeto/logica_pograma.h</includedby>
+    <includedby refid="lista_8h" local="yes">C:/Users/joaom/Downloads/la1PL03G03-master/projeto/lista.h</includedby>
+    <includedby refid="interface_8c" local="yes">C:/Users/joaom/Downloads/la1PL03G03-master/projeto/interface.c</includedby>
+    <includedby refid="interface_8h" local="yes">C:/Users/joaom/Downloads/la1PL03G03-master/projeto/interface.h</includedby>
+    <includedby refid="logica__pograma_8c" local="yes">C:/Users/joaom/Downloads/la1PL03G03-master/projeto/logica_pograma.c</includedby>
+    <includedby refid="main_8c" local="yes">C:/Users/joaom/Downloads/la1PL03G03-master/projeto/main.c</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>C:/Users/joaom/Downloads/la1PL03G03-master/projeto/logica_pograma.h</label>
+        <link refid="logica__pograma_8h_source"/>
+      </node>
+      <node id="3">
+        <label>C:/Users/joaom/Downloads/la1PL03G03-master/projeto/lista.h</label>
+        <link refid="lista_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>C:/Users/joaom/Downloads/la1PL03G03-master/projeto/interface.h</label>
+        <link refid="interface_8h_source"/>
+      </node>
+      <node id="1">
+        <label>C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h</label>
+        <link refid="camada__dados_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_c_o_o_r_d_e_n_a_d_a" prot="public">COORDENADA</innerclass>
+    <innerclass refid="struct_j_o_g_a_d_a" prot="public">JOGADA</innerclass>
+    <innerclass refid="struct_e_s_t_a_d_o" prot="public">ESTADO</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="camada__dados_8h_1a6821bafc3c88dfb2e433a095df9940c6" prot="public" static="no">
+        <name>BUF_SIZE</name>
+        <initializer>1024</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" line="3" column="9" bodyfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" bodystart="3" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="camada__dados_8h_1a71050f02348f35a4b97ef980abf9a4ce" prot="public" static="no">
+        <name>PROJETO_CAMADA_DADOS_H</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" line="45" column="9" bodyfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039" prot="public" static="no" strong="no">
+        <type></type>
+        <name>CASA</name>
+        <enumvalue id="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039abc711f491a56ec7af7a688be508c5113" prot="public">
+          <name>VAZIO</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039ad24485fddec75419fd4a0cc9edda0ca5" prot="public">
+          <name>BRANCA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039a007278eb3827d19891b47cdd3ac8846d" prot="public">
+          <name>PRETA</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039ab620e38b0268bee43c7e9a88bd6e73fa" prot="public">
+          <name>UM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="camada__dados_8h_1aba91601f16d4c485b2d9b8c429f27039a2bf153109d0c8b96e61bc18d5be7c5da" prot="public">
+          <name>DOIS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>estrutura que nos da o estado do tabuleiro </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" line="11" column="1" bodyfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" bodystart="11" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="camada__dados_8h_1a94c221d29a1760f008b7834093259b7d" prot="public" static="no">
+        <type><ref refid="struct_j_o_g_a_d_a" kindref="compound">JOGADA</ref></type>
+        <definition>typedef JOGADA JOGADAS[32]</definition>
+        <argsstring>[32]</argsstring>
+        <name>JOGADAS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" line="28" column="16" bodyfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="camada__dados_8h_1abdb69f88313ca8774a3972dc4e7a9c49" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int obter_jogador_atual</definition>
+        <argsstring>(int e)</argsstring>
+        <name>obter_jogador_atual</name>
+        <param>
+          <type>int</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>funcao que obtem o jogador atual </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" line="41" column="5" bodyfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.c" bodystart="36" bodyend="39" declfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" declline="41" declcolumn="5"/>
+      </memberdef>
+      <memberdef kind="function" id="camada__dados_8h_1a7e0c7e26fb685d9ab501e19b05e6954f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_e_s_t_a_d_o" kindref="compound">ESTADO</ref> *</type>
+        <definition>ESTADO* inicializar_estado</definition>
+        <argsstring>()</argsstring>
+        <name>inicializar_estado</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>funcao que inicializa a estrutura do estado </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" line="44" column="8" bodyfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.c" bodystart="3" bodyend="32" declfile="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h" declline="44" declcolumn="8"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>PROJETO_CAMADA_DADOS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>BUF_SIZE<sp/>1024</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>{VAZIO,<sp/>BRANCA,<sp/>PRETA,UM,DOIS}<sp/>CASA;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="struct_c_o_o_r_d_e_n_a_d_a" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>coluna;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>linha;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">}<sp/><ref refid="struct_c_o_o_r_d_e_n_a_d_a" kindref="compound">COORDENADA</ref>;</highlight></codeline>
+<codeline lineno="23" refid="struct_j_o_g_a_d_a" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_c_o_o_r_d_e_n_a_d_a" kindref="compound">COORDENADA</ref><sp/>jogador1;</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_c_o_o_r_d_e_n_a_d_a" kindref="compound">COORDENADA</ref><sp/>jogador2;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">}<sp/><ref refid="struct_j_o_g_a_d_a" kindref="compound">JOGADA</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="struct_j_o_g_a_d_a" kindref="compound">JOGADA</ref><sp/>JOGADAS[32];</highlight></codeline>
+<codeline lineno="32" refid="struct_e_s_t_a_d_o" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>CASA<sp/>tab[8][8];</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="struct_c_o_o_r_d_e_n_a_d_a" kindref="compound">COORDENADA</ref><sp/>ultima_jogada;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>JOGADAS<sp/>jogadas;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>num_jogadas;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>jogador_atual;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal">}<sp/><ref refid="struct_e_s_t_a_d_o" kindref="compound">ESTADO</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>obter_jogador_atual(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>e);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><ref refid="struct_e_s_t_a_d_o" kindref="compound">ESTADO</ref><sp/>*inicializar_estado();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>PROJETO_CAMADA_DADOS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//PROJETO_CAMADA_DADOS_H</highlight></codeline>
+    </programlisting>
+    <location file="C:/Users/joaom/Downloads/la1PL03G03-master/projeto/camada_dados.h"/>
+  </compounddef>
+</doxygen>
