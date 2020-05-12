@@ -27,20 +27,19 @@ int main(int argc, char **argv) {
             else e->tab[coluna][linha] = DOIS, coluna++;
         }
         //movs
-        int n = 0, j1l = 0, j2l = 0, contador = 0;
-        char line[BUF_SIZE], j1c, j2c;
-        while (fgets(line, BUF_SIZE, file) != NULL) {
-            if (sscanf(line, "%c%d %c%d", &j1c, &j1l, &j2c, &j2l) == 4) {
+        int n=0,j1l=0,j2l=0,contador=0,jogadas=0;
+        char line[BUF_SIZE],j1c,j2c;
+        while (fgets(line,BUF_SIZE,file) != NULL) {
+            if (sscanf(line,"%d: %c%d %c%d",&jogadas,&j1c,&j1l,&j2c,&j2l) == 5) {
                 e->jogadas[n].jogador1.coluna = j1c - 'a';
-                e->jogadas[n].jogador1.linha = j1l;
-                e->jogadas[n].jogador2.linha = j2l;
+                e->jogadas[n].jogador1.linha = j1l - 1;
+                e->jogadas[n].jogador2.linha = j2l - 1;
                 e->jogadas[n].jogador2.coluna = j2c - 'a';
                 n++;
-                contador+=2;
-
-            } else if (sscanf(line, "%c%d ", &j1c, &j1l) == 2) {
-                e->jogadas[n].jogador1.coluna = j1c - 'a';
-                e->jogadas[n].jogador1.linha = j1l;
+            }
+            else if (sscanf(line,"%d: %c%d ",&jogadas,&j1c,&j1l) == 3) {
+                e->jogadas[n].jogador1.coluna = j1c- 'a';
+                e->jogadas[n].jogador1.linha = j1l- 1;
                 contador++;
             }
 
@@ -52,11 +51,11 @@ int main(int argc, char **argv) {
         }
         else if (contador%2 == 1) {
             e->ultima_jogada.coluna = j1c - 'a';
-            e->ultima_jogada.linha = j1l;
+            e->ultima_jogada.linha = j1l - 1;
 
         } else if (contador%2 == 0) {
             e->ultima_jogada.coluna = j2c - 'a';
-            e->ultima_jogada.linha = j2l;
+            e->ultima_jogada.linha = j2l - 1;
         }
         count = contador;
         fclose(file);
@@ -124,11 +123,11 @@ int main(int argc, char **argv) {
         fprintf(file2, "\n");
 
         //jogadas
-        for (int k = 0; k < e->num_jogadas; k++) {
-            fprintf(file2,"%c%d %c%d\n", e->jogadas[k].jogador1.coluna + 'a', e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna + 'a', e->jogadas[k].jogador2.linha);
+        for(int k=0;k<e->num_jogadas;k++) {
+            fprintf(file2,"%d: %c%d %c%d\n",k+1,e->jogadas[k].jogador1.coluna + 'a',e->jogadas[k].jogador1.linha + 1,e->jogadas[k].jogador2.coluna +'a',e->jogadas[k].jogador2.linha + 1);
         }
-        if (e->jogadas[e->num_jogadas].jogador1.linha != -1 && e->jogadas[e->num_jogadas].jogador1.coluna != -1) {
-            fprintf(file2,"%c%d\n", e->jogadas[e->num_jogadas].jogador1.coluna + 'a', e->jogadas[e->num_jogadas].jogador1.linha);
+        if(e->jogadas[e->num_jogadas].jogador1.linha !=-1 && e->jogadas[e->num_jogadas].jogador1.coluna !=-1) {
+            fprintf(file2,"%d: %c%d\n",e->num_jogadas+1,e->jogadas[e->num_jogadas].jogador1.coluna + 'a',e->jogadas[e->num_jogadas].jogador1.linha + 1);
         }
 
         fclose(file2);
