@@ -175,10 +175,10 @@ int num;
 
             //jogadas
             for(int k=0;k<e->num_jogadas;k++) {
-                fprintf(fout,"%c%d %c%d\n",e->jogadas[k].jogador1.coluna + 'a',e->jogadas[k].jogador1.linha,e->jogadas[k].jogador2.coluna +'a',e->jogadas[k].jogador2.linha);
+                fprintf(fout,"%d: %c%d %c%d\n",k+1,e->jogadas[k].jogador1.coluna + 'a',e->jogadas[k].jogador1.linha + 1,e->jogadas[k].jogador2.coluna +'a',e->jogadas[k].jogador2.linha + 1);
             }
             if(e->jogadas[e->num_jogadas].jogador1.linha !=-1 && e->jogadas[e->num_jogadas].jogador1.coluna !=-1) {
-                fprintf(fout,"%c%d\n",e->jogadas[e->num_jogadas].jogador1.coluna + 'a',e->jogadas[e->num_jogadas].jogador1.linha);
+                fprintf(fout,"%d: %c%d\n",e->num_jogadas+1,e->jogadas[e->num_jogadas].jogador1.coluna + 'a',e->jogadas[e->num_jogadas].jogador1.linha + 1);
             }
 
             fclose(fout);
@@ -209,17 +209,17 @@ int num;
             }
 
             //movs
-            int n=0,j1l=0,j2l=0,contador=0;
+            int n=0,j1l=0,j2l=0,contador=0,jogadas=0;
            char line[BUF_SIZE],j1c,j2c;
            while (fgets(line,BUF_SIZE,fout) != NULL) {
-               if (sscanf(line,"%c%d %c%d",&j1c,&j1l,&j2c,&j2l) == 4) {
+               if (sscanf(line,"%d: %c%d %c%d",&jogadas,&j1c,&j1l,&j2c,&j2l) == 5) {
                    e->jogadas[n].jogador1.coluna = j1c - 'a';
                    e->jogadas[n].jogador1.linha = j1l - 1;
                    e->jogadas[n].jogador2.linha = j2l - 1;
                    e->jogadas[n].jogador2.coluna = j2c - 'a';
                    n++;
                 }
-               else if (sscanf(line,"%c%d ",&j1c,&j1l) == 2) {
+               else if (sscanf(line,"%d: %c%d ",&jogadas,&j1c,&j1l) == 3) {
                    e->jogadas[n].jogador1.coluna = j1c- 'a';
                    e->jogadas[n].jogador1.linha = j1l- 1;
                    contador++;
